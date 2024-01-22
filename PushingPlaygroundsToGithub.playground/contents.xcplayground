@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Swift Basics'/>
+        <page name='Operators and Control Flow '/>
+        <page name='Functions'/>
+        <page name='Optionals and Error Handling'/>
+        <page name='Closures and Enumerations'/>
+        <page name='Advanced Swift Concepts'/>
+        <page name='Intermediate iOS Development'/>
+        <page name='UIKIT Framework'/>
+        <page name='User Input'/>
+        <page name='Table Views and Collection Views'/>
+        <page name='Networking in iOS'/>
+    </pages>
+</playground>
