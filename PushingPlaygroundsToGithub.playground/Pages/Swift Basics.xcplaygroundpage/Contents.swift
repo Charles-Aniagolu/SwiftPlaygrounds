@@ -1,6 +1,6 @@
 import Foundation
 
-/*
+/**
  
 Swift Variable, Constants, and Basic Data Types
  
@@ -37,9 +37,8 @@ str += "!"  //OR
 str = str + "!"
 
 
- /*
- Constants. the key concept is the same with variable above. However, the key distinction from variable is that once a value is assigned to a constant, it cannot be changed throughtout the execution of the program. Constants are used to represent values that remain unchanged during the course of the program. 
-  */
+ /**
+ Constants. the key concept is the same with variable above. However, the key distinction from variable is that once a value is assigned to a constant, it cannot be changed throughtout the execution of the program. Constants are used to represent values that remain unchanged during the course of the program. */
  
  //Constants uses "let" keyword
 
@@ -55,7 +54,7 @@ let primeNumbers: [Int] = [2, 3, 5, 7, 11]
 
 
 
-/*
+/**
 
 Differences between Swift Variables and Constants:
 
@@ -71,8 +70,7 @@ Use Case: Use variables when the value might change during the execution of the 
 Use constants when the value should remain constant throughout the program.
 
 Immutability Benefits: Constants provide safety by ensuring that once a value is set, it cannot be accidentally changed, reducing the risk of unintended modifications.
-Readability: 
- */
+Readability: */
 
 
 let numberOfMunicipalities: Int = 22
@@ -97,7 +95,7 @@ print(municipalDescription)
 
 
 
-/*
+/**
 
 Basic Data Types
 - Int = Integer
@@ -112,8 +110,7 @@ Basic Data Types
  
  Advanced Data Types
  - Tuples (helps to create and pass around grouping of values from a function)
- - Optionals (handles absence of values.
- */
+ - Optionals (handles absence of values.*****/
 
 var welcomeMessage: String
 welcomeMessage = "Hello, there!"
