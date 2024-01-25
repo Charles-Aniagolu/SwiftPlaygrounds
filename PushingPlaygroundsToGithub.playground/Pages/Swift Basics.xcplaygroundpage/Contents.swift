@@ -1,7 +1,7 @@
 import Foundation
 
  
-//Swift Variable, Constants, and Basic Data Types
+//Swift Variable, Constants,Basic Data Types, and Arrays
  
 
 
@@ -89,3 +89,69 @@ let sentence = "Swift is powerful"
 let substring = sentence.prefix(5)
  
 
+//Arrays and Dictionaries
+
+//Array annotation
+//var myArray: [elementType] = [element1, element2, element3]ts:
+var myFruits: [String] = ["Apple", "Banan", "Orange"]
+
+//Array manipulation
+let firstFruit = myFruits[0]    //accessing the first element
+let secondFruit = myFruits[1]   // accessing the second element
+
+//Modifying Elements
+myFruits[2] = "Grapes"         //modify the 3rd element
+myFruits.append("Kiwi")        //adding a new element at the end.
+
+
+//Counting elements
+let count = myFruits.count
+print("Number of fruits: \(count)")
+
+//Iterating through Elements
+for fruit in myFruits {
+    print(fruit)
+}
+
+
+//creating Arrays
+let numbers = [1,2,3,4,5,6,7]
+
+//Using array constructor to create new element
+let anotherNumbers = Array(arrayLiteral: 1,2,3,4,5,6)
+
+//Creating a an empty array
+var emptyArray: [Int] = []
+emptyArray = [1,3,5,5]
+
+
+//Repeating a Value
+let repeatedValues = Array(repeating: 0, count: 5)
+// Creates an array with five elements, all initialized to 0
+
+
+//Copying Array Approach: using + operator
+let array1 = [1,2,3]
+let array2 = [4,5,6]
+
+let combinedArray = array1 + array2
+print(combinedArray)
+
+//Copying Array Approach: using += operator
+var array3 = [3,4,5]
+var array4 = [6,7,8]
+array3 = array3 + array4
+print(array3)
+
+//Approach 3: Using ´append(contsOf:) Method
+var array5 = [5,6,7]
+var array6 = [8,9,10]
+
+array5.append(contentsOf: array6)
+
+//Approach 4: Creating new Array
+let array7 = [5,6,7]
+let array8 = [8,9,10]
+
+let newArray = array7 + array8
+print(newArray)

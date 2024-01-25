@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 //Swift Operators
 
@@ -79,6 +79,7 @@ func processInput(_ input: String?){
     print("Processing input: \(unwrappedInput)")
 }
 
+
 //If Statements including Else and Else if
 let timeOfDay = "morning"
 if timeOfDay == "morning"{
@@ -89,7 +90,9 @@ if timeOfDay == "morning"{
 }else{
     print("Good evening!")
 }
-    
+ 
+
+
 //Do-While Loop
 var repeatCount = 3
 repeat{
@@ -126,4 +129,14 @@ print(result)
 
 
 
+
+
+//manipulation
+
+
+//var songs: [String] = []
+var songs = [String]()
+
+
+let anotherNumbers = Array(arrayLiteral: 1, 2, 3, 4, 5, 6)
 
