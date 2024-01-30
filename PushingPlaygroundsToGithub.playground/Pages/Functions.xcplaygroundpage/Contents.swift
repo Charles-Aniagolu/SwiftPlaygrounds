@@ -2,14 +2,16 @@
 import Foundation
 
 
-/*
-  A function is a re-usable and self-contained block of code tht performs a specific task. It is a fundamental building block in Swift programming and allows you to organize you code, make it modular, and promote code    reuse.
+/**
+  A function is a re-usable and self-contained block of code tht performs
+ - a specific task. It is a fundamental building block in Swift programming and allows you to organize
+ - you code, make it modular, and promote code    reuse.
  
-//Function code annotation
-func functionName(parameter1: Type, parameter2: type, ...) -> ReturnType{
-    //function body
-    // Code to perform a specific task
-    return Result
+Function code annotation
+- func functionName(parameter1: Type, parameter2: type, ...) -> ReturnType{
+- function body
+- Code to perform a specific task
+- return Result
 }
  */
 
@@ -238,7 +240,13 @@ func greet(to name: String) {
 greet(to: "John")
 
 //Explanation in Example 3.
-//Functions with external parameter only. In example 3, to is the external parameter name used to label the argument passed to the function. When calling the function the caller would use the external parameter name as follows:
+/**
+ Functions with external parameter only.
+ - In example 3, to is the external parameter name used to label the argument passed to the function.
+ - When calling the function the caller would use the external parameter name as follows:
+ 
+ */
+
 
 
 
@@ -364,7 +372,9 @@ print(result4)
 
 //Summary: Print and Return Statements
 /**
- In summary, print is for displaying messages in the console, primarily for debugging purposes, and it doesn't affect the program's flow. On the other hand, return is used to provide a value back to the calling code and is essential for functions that perform calculations or generate results.
+ In summary, print is for displaying messages in the console, primarily for debugging purposes, 
+ - and it doesn't affect the program's flow. On the other hand, return is used to provide a value back to
+ - the calling code and is essential for functions that perform calculations or generate results.
  */
 
 
