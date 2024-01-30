@@ -151,3 +151,220 @@ func factorial(n: Int) -> Int {
 //function call
 let myfact = factorial(n: 20)
 print(myfact)
+
+
+//-------------------------------------------------------------------
+
+//Difference between External and Internal parameter names in Swift
+/**
+ External Parameter Name:
+ - It is the name used when calling the function.
+ - It provides a clear and descriptive label for each argument.
+ - It is specified in the function signature, preceding the internal parameter name.
+ - It helps improve the readability of the function call.
+ 
+ 
+ Internal Parameter Name:
+ - It is the name used within the function's implementation.
+ - It is used to refer to the parameter's value inside the function body.
+ - It is specified in the function signature, following the external parameter name and separated
+   by a space.
+ - It helps make the function implementation clear and concise.
+ */
+
+
+//Internal parameter are use inside the function and are not visible to the
+//caller. They are used to refer to the values passed to the function.
+//here name and message are internal parameters used inside the function to
+//refer to values passed to the function.
+
+
+
+//Internal Parameters: Example 1:
+
+//Function definition
+func greet(name: String, message: String){
+    print("\(name), \(message)")
+    
+}
+// Function call
+greet(name: "John", message: "How are you doing?")
+
+
+
+
+//External Parameters: Example 1:
+/**
+ External parameters are used to label the arguments passed to the function.
+- They are visible to the caller and used to make the function more readable.
+-  "_" indicates that the first parameter does not have an external parameter
+- names.When calling the function the caller would use external parameter as follows.
+
+ */
+
+
+//Function definition
+func multiply(_ a: Int, by b: Int) -> Int {
+    return a * b
+}
+// Function Call
+let result = multiply(5, by: 10)
+
+/**
+ - Explanation in External Parameter: Example 1:
+ - Examples of function with mechanisms labelled parameters
+ - here a and b are internal parameters. They are used
+ - inside the function to refer to values passed to the
+ - function. When calling the function the caller would
+ - use the internal parameter names.
+ */
+
+
+//Example 2.
+func add(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
+// Function Call
+let total = add(3, 4)
+
+
+
+
+//Example 3.
+func greet(to name: String) {
+    print("Hello,  \(name)")
+}
+//Function Call
+greet(to: "John")
+
+//Explanation in Example 3.
+//Functions with external parameter only. In example 3, to is the external parameter name used to label the argument passed to the function. When calling the function the caller would use the external parameter name as follows:
+
+
+
+//Example 4.
+
+//Function definition
+func calculate(_ a: Int, plus b: Int,  minus c: Int) -> Int {
+    return a + b - c
+}
+// Function Call
+let total2 = calculate(5, plus: 6, minus: 7)
+
+
+
+//Example 5
+//function definition
+func square(_ x: Double) -> Double {
+    return x * x
+}
+// Function call
+let result1 = square(5)
+print(result1)
+
+
+
+//Example 6:
+//Function definition
+func greet(_ name: String) {
+    print("Hello, \(name)")
+}
+// Function call
+greet("John")
+
+
+
+//Example 7.
+
+//Function definition
+func concatenate(_ str1: String, with str2: String ) -> String {
+    return str1 + str2
+}
+// Function call
+let result2 = concatenate("Swift", with: "Programming")
+print(result2)
+
+
+
+
+//Example 8.
+
+// External parameter: base, Internal parameter: exponent
+func power(_ base: Double, raisedTo exponent: Double) -> Double {
+    return pow(base, exponent)
+}
+// Function call
+let result3 = power(2, raisedTo: 3)
+
+
+//Example 9
+// External parameter: from, Internal parameter: to
+func copyFile(from source: String, to destination: String) {
+    // Implementation
+}
+// Function call
+copyFile(from: "file.txt", to: "backup/file.txt")
+
+
+
+//Example 10
+// External parameter: with, Internal parameter: and
+func combineStrings(_ first: String, with second: String) -> String {
+    return first + second
+}
+// Function call
+let combined = combineStrings("Hello", with: " World")
+
+
+
+
+//-------------------------------------------------------------------
+
+
+
+//Differences between print and return statements
+
+/**
+ 
+ The print and return statements serve different purposes in Swift functions.
+
+ Print Statement: print is used to display information in the console during the execution of your program.
+ - It is typically used for debugging or providing feedback during development.
+ - It outputs messages to the console but does not affect the control flow of the program.
+ - print is void, meaning it doesn't return a value.
+ */
+
+//Example.
+func printMessage(message: String) {
+    print(message)
+}
+//Function Call
+printMessage(message: "Hello, World!")
+
+
+
+//Return Statement.
+/**
+ Return Statement:
+ - return is used to send a value back from a function to the point where the function was called.
+ - It is crucial for functions that are designed to perform a calculation or generate a result.
+ - The type of the value returned is specified in the function signature.
+ - return terminates the function's execution and passes control back to the calling code.
+ */
+
+func add(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+// Function Call
+let result4 = add(a: 3, b: 4)
+print(result4)
+
+
+
+//Summary: Print and Return Statements
+/**
+ In summary, print is for displaying messages in the console, primarily for debugging purposes, and it doesn't affect the program's flow. On the other hand, return is used to provide a value back to the calling code and is essential for functions that perform calculations or generate results.
+ */
+
+
