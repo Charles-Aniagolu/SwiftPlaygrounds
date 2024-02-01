@@ -4,10 +4,10 @@ import Foundation
  
  In Swift programming, there are functions that pass by value and functions that pass by reference.
  - In Swift, structs, enums, and primitive types are passed by value, while classes and functions are passed by
-   reference 12.
+   reference.
  
  - When a function is passed by value, the data inside the function is copied, and any changes made to the data inside
-   the function are only visible within the function’s scope .
+   the function are only visible within the function’s scope.
  
  - On the other hand, when a function is passed by reference, the reference to the data is passed, and any changes
    made to the data inside the function are visible outside the function’s scope.
