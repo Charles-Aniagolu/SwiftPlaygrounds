@@ -2,15 +2,16 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='Swift Basics'/>
-        <page name='2. Operators and Control Flow '/>
-        <page name='3. Functions'/>
-        <page name='4. Optionals and Error Handling'/>
-        <page name='5. Closures and Enumerations'/>
-        <page name='6. Advanced Swift Concepts'/>
-        <page name='7. Intermediate iOS Development'/>
-        <page name='8. UIKIT Framework'/>
-        <page name='9. User Input'/>
-        <page name='10. Table Views and Collection Views'/>
-        <page name='11. Networking in iOS'/>
+        <page name='Advanced Swift Concepts'/>
+        <page name='Closures and Enumerations'/>
+        <page name='Functions'/>
+        <page name='Intermediate iOS Development'/>
+        <page name='Networking in iOS'/>
+        <page name='Operators and Control Flow '/>
+        <page name='Optionals and Error Handling'/>
+        <page name='Table Views and Collection Views'/>
+        <page name='UIKIT Framework'/>
+        <page name='Swift Pass By Value and Refernce'/>
+        <page name='User Input'/>
     </pages>
 </playground>
