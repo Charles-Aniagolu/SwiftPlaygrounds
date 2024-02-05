@@ -213,18 +213,23 @@ print(personB.age)      //Output: Jane (original object is modified)
 
 /**
  
- However, it's important to note that when you pass an object to a function, the reference itself is passed by value. That is, the function receives a copy of the reference to the same object. If the function modifies the object, those changes will be visible outside the function because the reference is shared.
+ However, it's important to note that when you pass an object to a function, the reference itself is passed by value. 
+ - That is, the function receives a copy of the reference to the same object.
+ - If the function modifies the object, those changes will be visible outside the function because the
+    reference is shared.
  
  
  Statement 1:
-
- "This demonstrates the concept of passing by reference for class instances in Swift, where changes made inside the function are reflected outside the function since classes are reference types."
+ - This demonstrates the concept of passing by reference for class instances in Swift,
+ - where changes made inside the function are reflected outside the function since classes are  reference types.
+ 
  Statement 2:
-
- "However, it's important to note that when you pass an object to a function, the reference itself is passed by value. That is, the function receives a copy of the reference to the same object. If the function modifies the object, those changes will be visible outside the function because the reference is shared."
+ - However, it's important to note that when you pass an object to a function, the reference itself is
+   passed by value.
+ - That is, the function receives a copy of the reference to the same object. If the function modifies the -  object, those changes will be visible outside the function because the reference is shared.
 
  */
-
+   
 //Example 2
 func modifiedPerson(_ person: Person){
     person.name = "Jacob"
@@ -386,13 +391,16 @@ func processTuple(input: (Int, String)) -> (Int,String) {
  Differences in Return and Print Statements.
  return Statement:
  Purpose: Used to send a value back from a function.
- Functionality: Indicates the end of the function's execution and returns the specified value to the caller.
- Usage: Typically used to produce a result or output that can be captured and used by the calling code.
+ - Functionality: Indicates the end of the function's execution and returns the specified value to the caller.
+ 
+ - Usage: Typically used to produce a result or output that can be captured and used by the calling code.
  
  print Statement:
- Purpose: Used to output information to the console for debugging or informational purposes.
- Functionality: Prints the specified values or expressions to the console during the program's execution.
- Usage: Primarily used for debugging or displaying information but doesn't provide a value back to the caller.
+ - Purpose: Used to output information to the console for debugging or informational purposes.
+ 
+ - Functionality: Prints the specified values or expressions to the console during the program's execution.
+ 
+ - Usage: Primarily used for debugging or displaying information but doesn't provide a value back to the caller.
  
  */
 
