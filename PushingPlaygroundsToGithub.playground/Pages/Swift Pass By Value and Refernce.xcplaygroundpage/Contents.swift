@@ -211,6 +211,7 @@ personB.name = "Jane"    //Modifying through one refernce affects the original o
 print(personB.name)
 print(personB.age)      //Output: Jane (original object is modified)
 
+
 /**
  
  However, it's important to note that when you pass an object to a function, the reference itself is passed by value. 
@@ -221,12 +222,13 @@ print(personB.age)      //Output: Jane (original object is modified)
  
  Statement 1:
  - This demonstrates the concept of passing by reference for class instances in Swift,
- - where changes made inside the function are reflected outside the function since classes are  reference types.
+ - where changes made inside the function are reflected outside the function since classes are   reference types.
  
  Statement 2:
  - However, it's important to note that when you pass an object to a function, the reference itself is
    passed by value.
- - That is, the function receives a copy of the reference to the same object. If the function modifies the -  object, those changes will be visible outside the function because the reference is shared.
+ - That is, the function receives a copy of the reference to the same object. 
+ - If the function modifies the -  object, those changes will be visible outside the function because the reference is shared.
 
  */
    
@@ -464,8 +466,8 @@ func logUserInfo(name: String, age: Int) {
  
  Differences in Void functions and Return Types
 Void Funtion (No Return Types):
- void function (no return type) performs some action but doesn't return a value explicitly.
-A function with a return type explicitly specifies the type of value it will return and uses the return keyword to send that value back to the caller
+ - void function (no return type) performs some action but doesn't return a value explicitly.
+- A function with a return type explicitly specifies the type of value it will return and uses the return - keyword to send that value back to the caller
  
  */
 
