@@ -188,8 +188,12 @@ print(text)
 print(anotherString)
 
 /**
- Passed By Reference - Reference types those that define objects with properties and methods.
- In Swift, classes are reference types. When you work with a reference type, the data is passed by reference. This means that, instead of creating a copy of the original object, the reference to the object is passed around. Any modifications made to the object through one reference will affect all other references to the same object
+ - Passed By Reference - Reference types those that define objects with properties and methods.
+ - In Swift, classes are reference types.
+ - When you work with a reference type, the data is passed by reference.
+ - This means that, instead of creating a copy of the original object, the reference to the
+ - object is passed around. Any modifications made to the object through one reference
+ - will affect all other references to the same object.
  */
 
 //Example 1 - Classes
