@@ -469,9 +469,10 @@ func logUserInfo(name: String, age: Int) {
 /**
  
  Differences in Void functions and Return Types
-Void Funtion (No Return Types):
+- Void Funtion (No Return Types):
  - void function (no return type) performs some action but doesn't return a value explicitly.
-- A function with a return type explicitly specifies the type of value it will return and uses the return - keyword to send that value back to the caller
+- A function with a return type explicitly specifies the type of value it will return and
+-  uses the return - keyword to send that value back to the caller
  
  */
 
