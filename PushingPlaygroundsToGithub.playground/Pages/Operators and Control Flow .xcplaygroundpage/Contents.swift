@@ -140,3 +140,103 @@ var songs = [String]()
 
 let anotherNumbers = Array(arrayLiteral: 1, 2, 3, 4, 5, 6)
 
+
+//----------------------------------------------------
+ //Summary of control flow, loops and eary exits
+ 
+ 
+
+func validateAge(_ age: Int) {
+    guard age >= 18 else {
+        print("You must be 18 or older.")
+        return
+    }
+    print("Welcome!")
+}
+print(validateAge(40))
+
+
+
+
+// If Statement : Annotation
+
+let i = 10
+if i > 5 {
+    print("x is greater than 5")
+}
+
+
+
+//Guard Statement: Annotation Annotation: guard condition else { /* code to execute if condition is false */ }
+
+//Example 1 (Simple):
+
+func myValidateAge(_ age: Int) {
+    guard age >= 18 else {
+        print("You must be 18 or older.")
+        return
+    }
+    print("Welcome!")
+}
+print(myValidateAge(39))
+
+
+//Switch Statement: Annotation: switch value { case pattern: /* code */ default: /* code */ }
+//Example 1 (Simple):
+
+let day = "Monday"
+switch day {
+case "Monday":
+    print("It's the start of the week.")
+default:
+    print("It's another day.")
+}
+
+
+//Example 2 (Complex):
+
+enum TrafficLight {
+    case red, yellow, green
+}
+
+let currentLight = TrafficLight.red
+switch currentLight {
+case .red:
+    print("Stop")
+case .yellow:
+    print("Slow down")
+case .green:
+    print("Go")
+}
+
+
+//For-In Loop:Annotation: for item in collection { /* code */ }
+//Example 1 (Simple):
+
+for number in 1...5 {
+    print(number)
+}
+
+//Example 2 (Complex):
+let names = ["Alice", "Bob", "Charlie"]
+for name in names {
+    print("Hello, \(name)!")
+}
+
+//While Loop: Annotation: while condition { /* code */ }
+//Example 1 (Simple):
+
+var count = 0
+while count < 5 {
+    print(count)
+    count += 1
+}
+
+
+//Example 2 (Complex):
+
+var myTemperature = 25
+while myTemperature > 20 {
+    print("It's a warm day.")
+    myTemperature -= 1
+}

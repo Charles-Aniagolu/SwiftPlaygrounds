@@ -360,12 +360,12 @@ printMessage(message: "Hello, World!")
  - return terminates the function's execution and passes control back to the calling code.
  */
 
-func add(a: Int, b: Int) -> Int {
+func myAdd(a: Int, b: Int) -> Int {
     return a + b
 }
 
 // Function Call
-let result4 = add(a: 3, b: 4)
+let result4 = myAdd(a: 3, b: 4)
 print(result4)
 
 
@@ -377,4 +377,129 @@ print(result4)
  - the calling code and is essential for functions that perform calculations or generate results.
  */
 
+
+//---------------------------------------------------------------------
+//Summary of Functions in Swift Programming Language
+
+//1. Basic Function: Function Annotation
+func sayHello(){
+    print("Hello, Swift")
+}
+sayHello()
+
+//2. Function with Parameters: Function annotation
+func greet(nameT: String){
+    print("hello, \(nameT)")
+}
+greet(nameT: "Charles")
+
+
+
+//3. Function with Return Types: Function Annotation
+func add(a: Int, b: Int) -> Int {
+    return a + b
+}
+let sumT = add(a:4, b: 8)
+
+
+//4. Function with External and Internal Parameeter Names: Annotation
+func divide(dividend a: Double, by b: Double) -> Double {
+    return a / b
+    
+}
+
+let quoteient = divide(dividend: 10.0, by: 2.0)
+
+
+//5. Variadic Function: Function Annotation
+func average(_ numbers: Double...) -> Double {
+    let total = numbers.reduce(0, +)
+    return total / Double(numbers.count)
+}
+let avg = average(2.0, 4.0, 6.0, 8.0)
+
+
+//6. Function with Default Parameter Values: Function Annotation
+func power(base: Int, exponent: Int = 2) -> Int {
+    return Int(pow(Double(base), Double(exponent)))
+}
+let resultz = power(base: 3) //exponent defaults to 2
+    
+
+//7. Function with in-Out Parameters:
+func swapValues(_ a: inout Int, _ b: inout Int) {
+    let temp = a
+    a = b
+    b = temp
+}
+var x = 5
+var y = 10
+swapValues(&x, &y)
+
+
+//8. Nested Function : Annotation
+func outerFunction() {
+    func innerFunction() {
+        print("Insider nested function")
+    }
+    innerFunction()
+}
+outerFunction()
+
+//9. Anonymous Function (Closure): Function Annotation
+let multiply: (Int, Int) -> Int = { a, b in
+    return a * b
+    
+}
+let product = multiply(4, 5)
+
+
+
+
+//10. Function with Optiional Return Types : Function Annotation
+func findMax(_ numbers: Int...) -> Int? {
+    guard let max = numbers.max() else {
+        return nil
+    }
+    return max
+}
+
+if let maxNumber = findMax(3,7, 1,9) {
+    print("Maximum number is  \(maxNumber)")
+}else{
+    print("No numbers provided")
+}
+
+//11.Recursive Function: Function Annotation
+func factorial(_ n: Int) -> Int {
+    if n == 0 {
+        return 1
+        
+    }else{
+        return n * factorial(n - 1)
+    }
+}
+let fact = factorial(10)
+print(fact)
+
+
+//Throwing Function(Error Handling): Function Annotation
+// Function Annotation
+enum MathError: Error {
+    case divisionByZero
+}
+
+func divideWithCheck(_ a: Int, by b: Int) throws -> Int {
+    guard b != 0 else {
+        throw MathError.divisionByZero
+    }
+    return a / b
+}
+
+// Example
+do {
+    let result = try divideWithCheck(10, by: 0)
+} catch {
+    print("Error: \(error)")
+}
 
