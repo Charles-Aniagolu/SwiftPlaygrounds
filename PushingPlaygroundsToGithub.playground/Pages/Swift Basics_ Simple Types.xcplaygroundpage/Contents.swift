@@ -2,10 +2,17 @@ import Foundation
 
  
 //Swift Variable, Constants,Basic Data Types, and Arrays
+/**
+ Variables hold initial values when they are declared. Also, the type of the initial value should match the declared data type. Examples below
+ 
+ */
  
 
-
 //Here are five example of Swift variables:
+//Basic Syntax for variable definition in Swift are as follows:
+
+//var variableName: DataType = initialValue
+
 
 var age: Int = 25 // Integer variable
 
@@ -22,7 +29,13 @@ str += "!"  //OR
 str = str + "!"
 
 
-//Here a 5 examples of Swift Constants
+//Here a 5 examples of Swift Constants.
+/**
+ 
+  Constants are declared using the  "let" keyword. Constants are used to represent values that should not be changed once they are set. The basic syntax for defining Constants in Swift is as follows.  "let" constantName: DataType = initialValue
+ */
+ 
+
 
 // Integer Constant
 let nmberOFDaysInAweek: Int = 7
@@ -80,6 +93,11 @@ let fullName = firstName + " " + lastName
 let myAge: Int = 23
 let message = "I am \(myAge) years old. "
 
+
+
+
+
+
 //String length
 let courseName = "Swift Programming"
 let length = courseName.count
@@ -88,6 +106,28 @@ let length = courseName.count
 let sentence = "Swift is powerful"
 let substring = sentence.prefix(5)
  
+
+//Multi-Line Strings
+
+var myStr1 = """
+This the first multiple lines
+declaration in Swift code.
+"""
+
+var myStr2 = """
+This goes \
+over multiple\
+lines
+
+"""
+
+//Doubles and Boolean
+var pi = 3.141
+
+var awesome = true 
+
+
+
 
 //Arrays and Dictionaries
 
@@ -155,3 +195,30 @@ let array8 = [8,9,10]
 
 let newArray = array7 + array8
 print(newArray)
+
+var myArray: [Int] = [1,2,3,4,5,6,7,8,9,10]
+
+ 
+
+//Different ways to use a "for loop" to print values in Swift array.
+
+// Method 1: Using traditional for loop with indices
+for i in 0..<myArray.count {
+    print(myArray[i])
+}
+
+// Method 2: Using enumerated() method to get both index and value
+for (index, value) in myArray.enumerated() {
+    print("Index: \(index), Value: \(value)")
+}
+
+// Method 3: Using for-in loop directly on array values
+for value in myArray {
+    print(value)
+}
+
+// Method 4: Using forEach function
+myArray.forEach { value in
+    print(value)
+}
+

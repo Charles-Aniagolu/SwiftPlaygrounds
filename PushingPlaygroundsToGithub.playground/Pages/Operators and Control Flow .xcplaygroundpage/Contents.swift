@@ -240,3 +240,6 @@ while myTemperature > 20 {
     print("It's a warm day.")
     myTemperature -= 1
 }
+
+
+
