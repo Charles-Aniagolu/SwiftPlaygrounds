@@ -15,6 +15,7 @@ import Foundation
  You can attach raw values to enums so they can be created from integers or strings, or you can add associated values to store additional information about each case.
 
  
+ 
  */
 //Syntax Structure of Swift Arrays: - Creating Array of integers
 var number: [Int] = [1,2,3,4,5,6,7,8,9,10]

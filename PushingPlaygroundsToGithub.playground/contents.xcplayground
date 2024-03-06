@@ -14,5 +14,6 @@
         <page name='Swift Pass By Value and Refernce'/>
         <page name='User Input'/>
         <page name='Swift Generics'/>
+        <page name='Swift Reading values and Assigning Values'/>
     </pages>
 </playground>
