@@ -1,4 +1,5 @@
 //Function
+
 import Foundation
 
 
@@ -96,7 +97,7 @@ print("fahrenheitToCelcius: \(roundedResult)")
 func maxOfTwoNumbers(a: Int, b: Int) -> Int {
     //function body
     return a > b ? a : b // compact way: using ternary conditional operator
-    
+}
     /*
      OR a > b ? a : b (meaning)
      
@@ -108,7 +109,7 @@ func maxOfTwoNumbers(a: Int, b: Int) -> Int {
         return b
     }
      */
-}
+
 
 //function call
 let maxResult = maxOfTwoNumbers(a: 300, b: 600)
@@ -155,7 +156,7 @@ let myfact = factorial(n: 20)
 print(myfact)
 
 
-//-------------------------------------------------------------------
+//-----------------------------------------------------------
 
 //Difference between External and Internal parameter names in Swift
 /**
@@ -261,14 +262,16 @@ let total2 = calculate(5, plus: 6, minus: 7)
 
 
 
-//Example 5
-//function definition
+// Example 5
+// Function definition
 func square(_ x: Double) -> Double {
     return x * x
 }
+
 // Function call
 let result1 = square(5)
 print(result1)
+
 
 
 
@@ -326,7 +329,7 @@ let combined = combineStrings("Hello", with: " World")
 
 
 
-//-------------------------------------------------------------------
+//---------------------------------------------------------------
 
 
 
@@ -378,7 +381,7 @@ print(result4)
  */
 
 
-//---------------------------------------------------------------------
+//-----------------------------------------------------------------
 //Summary of Functions in Swift Programming Language
 
 //1. Basic Function: Function Annotation
@@ -503,3 +506,78 @@ do {
     print("Error: \(error)")
 }
 
+
+
+//Function inout
+/**
+ Definition of inout:
+ inout is a keyword in Swift used to indicate that a parameter is passed by reference to a function. This means the function can modify the value of the parameter directly, and any changes made to the parameter inside the function will be reflected outside the function.
+
+ Use and Main Objective:
+ The main objective of using inout parameters is to allow a function to modify the values of its parameters and have those changes reflected outside the function. It's particularly useful when you want a function to alter the value of a variable that was passed to it.
+
+ Types of inout:
+ inout is typically used with variables of non-constant types, including custom data types such as structures and classes.
+
+ Simple Examples:
+
+ */
+
+//Define a function that increments a number using iout
+func incrementNumber(_ num: inout Int){
+    num = num + 1
+}
+//Declare a variable outside the function
+var myNumber = 5
+
+//Call the function with inout parameter
+incrementNumber(&myNumber)
+
+//Print the value after the function call
+print("After incrementing: \(myNumber)")
+
+/**
+func swapValues(_ i: inout Int, _ j: inout Int) {
+    let temp = i
+    i = j
+    j = temp
+}
+var i = 5
+var j = 10
+swapValues(&i, &j)
+print("After swapping: i = \(i), y = \(j)")
+ 
+ n this example, the swapValues function takes two inout parameters (a and b) representing integers. It swaps their values, and the changes are reflected outside the function.
+ */
+
+// Example 2: Modifying Array Elements
+func incrementEachElement(_ arr: inout [Int]) {
+    for i in 0..<arr.count {
+        arr[i] += 1
+    }
+}
+
+var numbers = [1, 2, 3, 4]
+incrementEachElement(&numbers)
+print("After incrementing: \(numbers)")
+
+/**
+ Here, the incrementEachElement function increments each element of an array. The changes are observable outside the function.
+ 
+ */
+//  Example 3: Updating Custom Type
+struct Point {
+    var x: Int
+    var y: Int
+}
+
+func moveToOrigin(_ point: inout Point) {
+    point.x = 0
+    point.y = 0
+}
+
+var myPoint = Point(x: 5, y: 10)
+moveToOrigin(&myPoint)
+print("After moving to origin: \(myPoint)")
+
+ 
