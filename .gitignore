@@ -1,0 +1,100 @@
+# Ignore system specific files and directories
+*.DS.Store
+../.atom/
+  ../.bash_history
+  ../.bash_profile
+  ../.bash_profile-anaconda3.bak
+  ../.bash_prompt
+  ../.bash_sessions/
+  ../.bashrc
+  ../.cabal/
+  ../.cache/
+  ../.codeintel/
+  ../.composer/
+  ../.config/
+  ../.cups/
+  ../.dropbox/
+  ../.dvdcss/
+  ../.eclipse/
+  ../.emacs
+  ../.ghc/
+  ../.ghcup/
+  ../.gitconfig
+  ../.gitignore_global
+  ../.gradle/
+  ../.hushlogin
+  ../.idlerc/
+  ../.lesshst
+  ../.local/
+  ../.magicdraw/
+  ../.matplotlib/
+  ../.meteorsession
+  ../.mongorc.js
+  ../.mono/
+  ../.ms_openjdk_config
+  ../.node_repl_history
+  ../.npm/
+  ../.nuget/
+  ../.oh-my-zsh/
+  ../.oracle_jre_usage/
+  ../.p2/
+  ../.python_history
+  ../.ssh/
+  ../.stack/
+  ../.subversion/
+  ../.swiftpm/
+  ../.swipl-dir-history/
+  ../.swp
+  ../.templateengine/
+  ../.tooling/
+  ../.vim/
+  ../.viminfo
+  ../.vscode/
+  ../.zcompdump-Charles - MacBook Pro-5.7.1
+  ../.zcompdump-Charles - MacBook Pro-5.8
+  ../.zprezto/
+  ../.zprofile
+  ../.zprompts/
+  ../.zsh_history
+  ../.zsh_sessions/
+  ../.zshrc
+  ../.zshrc 
+  ../.zshrc-e
+  ../.zshrc.save
+  ../Applications/
+  ../Carla 2021 Requirements elicitation techniques_ a systematic liter 2.pdf
+  ../Charles Health pics/
+  ../Creative Cloud Files/
+  ../Desktop/
+  ./
+  ../Downloads/
+  ../Google Drive
+  ../IdeaProjects/
+  ../Java/
+  ../LearningHaskellExercises/
+  ../Library/
+  ../M-X customize themes
+  ../M-x list-packages
+  ../Movies/
+  ../Music/
+  ../OneDrive
+  ../OneDrive - Bisinfo
+  ../Pictures/
+  ../ProgressPresentation_main2.pptx
+  ../Public/
+  ../Sites/
+  ../TestRepo/
+  ../Zotero/
+  ../anaconda3/
+  ../app/
+  ../atom-one-dark-terminal/
+  ../cbnac2012@gmail.com - Google Drive
+  ../charles.nebo@boema.info - Google Drive
+  ../charlesnebo180@gmail.com - Google Drive
+  ../fonts/
+  ../haskell-ide-engine/
+  ../iCloud Drive (Archive)/
+  ../neofetch/
+  ../simple/
+  ../zhrsh
+  ../zshrc
