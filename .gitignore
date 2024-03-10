@@ -1,6 +1,14 @@
-# Ignore system specific files and directories
-*.DS.Store
-../.atom/
+# Ignore these files
+# Ignore temporary files
+*.tmp
+
+# Ignore log files
+*.log
+
+# Ignore build directories
+/build/
+
+  ../.atom/
   ../.bash_history
   ../.bash_profile
   ../.bash_profile-anaconda3.bak
@@ -39,7 +47,7 @@
   ../.oracle_jre_usage/
   ../.p2/
   ../.python_history
-  ../.ssh/
+  ./
   ../.stack/
   ../.subversion/
   ../.swiftpm/
@@ -66,7 +74,7 @@
   ../Charles Health pics/
   ../Creative Cloud Files/
   ../Desktop/
-  ./
+  ../Documents/
   ../Downloads/
   ../Google Drive
   ../IdeaProjects/
