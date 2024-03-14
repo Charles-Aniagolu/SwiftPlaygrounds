@@ -1,11 +1,13 @@
-// Enumeration, Array, Set, Dictionary
-
-//Complex Types: Enumeration, Sets, Tuples, Dictionaries
-
 import Foundation
 
-/**
 
+
+/*
+ Enumeration, Array, Set, Dictionary
+
+ Complex Types: Enumeration, Sets, Tuples, Dictionaries
+ 
+ 
  Arrays, sets, tuples, and dictionaries let you store a group of items under a single value. They each do this in different ways, so which you use depends on the behavior you want.
  Arrays store items in the order you add them, and you access them using numerical positions.
  Sets store items without any order, so you can’t access them using numerical positions.
@@ -14,9 +16,28 @@ import Foundation
  Enums are a way of grouping related values so you can use them without spelling mistakes.
  You can attach raw values to enums so they can be created from integers or strings, or you can add associated values to store additional information about each case.
 
- 
- 
  */
+
+var iColors: [String] = ["Yellow", "Purple", "Orange", "Green"]
+
+//Access and print elements
+print(iColors[0])
+print(iColors[2])
+
+//Adding and element
+iColors.append("Red")
+print(iColors)
+
+//Remove an Element
+iColors.remove(at: 1)
+print(iColors)
+
+// Iterate through the array
+for colors in iColors {
+    print(colors)
+}
+
+
 //Syntax Structure of Swift Arrays: - Creating Array of integers
 var number: [Int] = [1,2,3,4,5,6,7,8,9,10]
 let firstNumber = number  [0]
@@ -31,7 +52,7 @@ print(thirdNumber)
 
 //Creating an array of Strings
 var fruits: [String] = ["Apple", "Orange", "Banana", "Guva"]
-let totalFruits = fruits.count //returning the number of elements in the array
+let totalFruits = fruits.count
 print(totalFruits)
 
 
@@ -103,10 +124,10 @@ if colors.isEmpty {
     print("Colors available")
 }
 
-// f. Arrays with Different Types
-/**
- Arrays in Swift are strongly typed, but you can create an array with elements of different types using the "Any" type or "AnyObject for class instances:
 
+/*
+ f. Arrays with Different Types
+ Arrays in Swift are strongly typed, but you can create an array with elements of different types using the "Any" type or "AnyObject for class instances:
  */
 
 var mixedArray: [Any] = [1, "Swift", 3.14, true]
@@ -114,15 +135,18 @@ print(mixedArray)
 
 
 // g. Array Slicing: - You can create sub Array by using a range of indices
+
 let someFruits = fruits[0...3]
 print("someFruits are: \(someFruits)")
 
 
-// h. Higher-Order Functions:
-/**
- Swift provides powrful higher-order funtions for array manipulation, such as  'map' , 'filter', and 'reduce' These functions allow for concise and expressive operations on arrays:
 
+/*
+ h. Higher-Order Functions:
+ Swift provides powrful higher-order funtions for array manipulation, such as  'map' , 'filter', and 'reduce' These functions allow for concise and expressive operations on arrays:
  */
+
+
 let numbers = [1,2,3,4,5,6,7,8,9,10]
 let squareNumbers = numbers.map{$0 * $0 }
 print(squareNumbers)
@@ -134,15 +158,15 @@ print(filterNumbers)
 print(filterSomeNumbers)
 
 
-// i. Shallow Copy:
-/**
- 
+
+/*
+ i. Shallow Copy:
  A shallow copy creates a new array with the same elements, but it does not duplicate the elements themselves. Changes made to the elements inside the copied array will affect the original array and vice versa.
  */
 
 //using array initalizer
 
-let originalArray = [100,211,3,4,5]
+let originalArray: [Int] = [100,211,3,4,5]
 let copiedArray = Array(originalArray)
 print(copiedArray)
 
@@ -152,11 +176,11 @@ let thislArray =  [111,222,389,490,500]
 let myCopiedArray = thislArray[...]
 print(myCopiedArray)
 
-// j. Deep Copy
 
-/**
- A deep copy creates a new array with entirely new instances of the elements. Changes made to the elements inside the copied array will not affect the original array, and vice versa.
+/*
  
+ j. Deep Copy
+ A deep copy creates a new array with entirely new instances of the elements. Changes made to the elements inside the copied array will not affect the original array, and vice versa.
  */
 
 //Using map for value types
@@ -198,7 +222,10 @@ let mCopiedArray = iOriginalArray.map { $0.copy() as! MyObjCClass }
 
 
 
-//Enum Raw Values- You need to assign values to enum so they have meaning. This lets you create them dinamincally and use them in different ways. With Int define in the enum, Swift automatically assigns a number starting from 0 and you can use that number to create an instance of the appropriate enum case.
+/*
+Enum Raw Values- You need to assign values to enum so they have meaning. This lets you create them dinamincally and use them in different ways. With Int define in the enum, Swift automatically assigns a number starting from 0 and you can use that number to create an instance of the appropriate enum case.
+ */
+
 
 enum Planet: Int {
     case earth = 1
@@ -220,6 +247,8 @@ print(myEnum2)
      case mercury1, venus2, earth3, mars4, jupiter5, saturn6, uranus7, neptune8
  }
 
+
+
  // Iterate over all enum cases using a for loop
  for planet in Planets.allCases {
      print(planet)
@@ -239,6 +268,8 @@ print(result1)
 let result2 = Result.success
 print(result2)
 
+
+
 //Enum Associated Values
 enum Activity {
     case bored
@@ -254,18 +285,30 @@ print(running)
 
 let singing = Activity.singing(volume: 5)
 
-//Enum Raw Values- You need to assign values to enum so they have meaning. This lets you create them dinamincally and use them in different ways. With Int define in the enum, Swift automatically assigns a number starting from 0 and you can use that number to create an instance of the appropriate enum case.
 
 
 
- // Swift Sets
-/**
+/*
+ Enum Raw Values- You need to assign values to enum so they have meaning. This lets you create them dinamincally and use them in different ways. With Int define in the enum, Swift automatically assigns a number starting from 0 and you can use that number to create an instance of the appropriate enum case.
+ */
+
+/*
+ Swift Sets
  A set in Swift is an unordered collection of distinct elements. It is used to store unique values of the same type in a collection without any specific order
  */
+
+
+//-----------------------------------------------------------------
+
+
+
+
 //Syntax Structure of Sets
 //var setName: Set<Type> = [value10, value20, value30, ...]
 
 //Different Ways of Creating Sets in Swift:
+
+
 // a.
 var programmingLanguage: Set<String> = Set(["Java", "Swift", "Html", "JavaScript"])
 print(programmingLanguage)
@@ -283,6 +326,9 @@ if programmingLanguage.isEmpty {
     print("The set is not empty")
 }
 print(programmingLanguage)
+
+
+
 
 let noOfWallClocks = clocks.count
 
@@ -368,4 +414,4 @@ print(person)
 // Type inference.
 
 
-
+//Complex Types: Enumeration, Sets, Tuples, Dictionaries

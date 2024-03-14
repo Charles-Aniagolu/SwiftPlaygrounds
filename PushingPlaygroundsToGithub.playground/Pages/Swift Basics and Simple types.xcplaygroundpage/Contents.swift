@@ -1,19 +1,18 @@
 import Foundation
 
- 
-//Swift Variable, Constants,Basic Data Types, and Arrays
-/**
+
+/*
+Swift Variable, Constants,Basic Data Types, and Arrays
  Variables hold initial values when they are declared. Also, the type of the initial value should match the declared data type. Examples below
- 
  */
  
 
 //Here are five example of Swift variables:
 //Basic Syntax for variable definition in Swift are as follows:
 
+
+
 //var variableName: DataType = initialValue
-
-
 var age: Int = 25 // Integer variable
 
 var name: String = "John" // String variable
@@ -30,7 +29,7 @@ str = str + "!"
 
 
 //Here a 5 examples of Swift Constants.
-/**
+/*
  
   Constants are declared using the  "let" keyword. Constants are used to represent values that should not be changed once they are set. The basic syntax for defining Constants in Swift is as follows.  "let" constantName: DataType = initialValue
  */

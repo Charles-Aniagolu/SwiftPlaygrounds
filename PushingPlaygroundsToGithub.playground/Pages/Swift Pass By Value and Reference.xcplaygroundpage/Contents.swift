@@ -1,6 +1,6 @@
 import Foundation
 
-/**
+/*
  
  In Swift programming, there are functions that pass by value and functions that pass by reference.
  - In Swift, structs, enums, and primitive types are passed by value, while classes and functions are passed by
@@ -13,17 +13,25 @@ import Foundation
    made to the data inside the function are visible outside the function’s scope.
  */
 
+
+
+
 //Passed by Value:
 // Example 1: Structs - Values types that encapsulate data
 struct Point{
     var x: Double
     var y: Double
 }
+
+
+
 //Value Call: var point = Point(x: 2.0, y: 3.0)
 var point = Point(x: 2.0, y: 3.0)
 var newPoint = point //Passed by value, a copy is made
 newPoint.x = 5.0
 print(point.x) // output: 2.0 (original value remains unchanged)
+
+
 
 // Example 2:
 struct iPerson{
@@ -97,7 +105,7 @@ enum Day {
 let toDay: Day = .friday
 let anothertoDay: Day = .monday
 
-/**
+/*
 //Example 4: enum Planet
 enum Planet {
     case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
@@ -134,11 +142,14 @@ case .neptune:
  */
 
 
+
+
 //OR
 
-// Iterate over all neum cases using a for loop
+/*
+ Iterate over all neum cases using a for loop
   //NB; The allCases property is automatically synthesized for enums that conform to the CaseIterable.
-
+*/
 
 enum Planet: CaseIterable {
     case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
@@ -187,7 +198,7 @@ anotherString = "Hello, Objective-c"
 print(text)
 print(anotherString)
 
-/**
+/*
  - Passed By Reference - Reference types those that define objects with properties and methods.
  - In Swift, classes are reference types.
  - When you work with a reference type, the data is passed by reference.
@@ -216,7 +227,7 @@ print(personB.name)
 print(personB.age)      //Output: Jane (original object is modified)
 
 
-/**
+/*
  
  However, it's important to note that when you pass an object to a function, the reference itself is passed by value. 
  - That is, the function receives a copy of the reference to the same object.
@@ -286,6 +297,7 @@ class iBook {
     
     init(title: String, author: String) {
         self.title = title
+        Swift Pass By Value and Refernce
         self.author = author
     }
 }
@@ -393,7 +405,7 @@ func processTuple(input: (Int, String)) -> (Int,String) {
   print(output)
 
 
-/**
+/*
  Differences in Return and Print Statements.
  return Statement:
  Purpose: Used to send a value back from a function.
@@ -448,11 +460,13 @@ printArrayContents(myArray)
 func concatenatedArrayContents(_ array: [String]) -> String {
     var result = " "
     for element in array {
-        result += element + " "                   //result + element + " "
+        result += element + " "
     }
     
     return result
 }
+
+
  //Function Call
 let mArray = ["Mango", "Okra", "Lime"]
 let concatenatedString = concatenatedArrayContents(mArray)
@@ -466,7 +480,13 @@ func logUserInfo(name: String, age: Int) {
     print("User Info: Name - \(name), Age - \(age)")
 }
 
-/**
+
+
+
+
+
+
+/*
  
  Differences in Void functions and Return Types
 - Void Funtion (No Return Types):

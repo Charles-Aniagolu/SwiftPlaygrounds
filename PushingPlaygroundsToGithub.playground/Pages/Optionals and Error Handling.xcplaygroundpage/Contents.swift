@@ -223,6 +223,9 @@ func square(_ number: Int) -> Int? {
 let squaredValue = square(4) ?? -1
 print("Squared value: \(squaredValue)")
 
+
+
+
 //--------------------------------------------------------
 
 
@@ -250,6 +253,10 @@ func seasonForMonth(_ month: Int) -> String? {
 
 let currentSeason = seasonForMonth(8) ?? "Unknown"
 print("Current season: \(currentSeason)")
+
+
+
+
 //------------------------------------------------------
 
 
@@ -270,7 +277,10 @@ func ismyVowel(_ character: Character) -> Bool? {
 let charIsVowel = ismyVowel("A") ?? false
 print("Is character a vowel? \(charIsVowel)")
 
-//------------------------------------------------------------------------
+
+
+
+//--------------------------------------------------------------------
 
 
 
@@ -292,7 +302,9 @@ print("Number from string: \(numberFromString)")
 
 
 //------------------------------------------------------------------
-/**
+
+
+/*
 - An optional is a type that can either have a value or be nil. To use the
  - value of an optional, you need to unwrap it using one of the following
   - methods1:
@@ -321,9 +333,14 @@ print(name1!.count) // 5
 
 var name1: String? = "Alice"
 
+
+
 // Using Nil-Coalescing Operator to provide a default value if name1 is nil
+
 let count = name1?.count ?? -1 // Provide a default value like -1 or any other meaningful default
 print(count)
+
+
 
 // Setting name1 to nil
 name1 = nil
@@ -358,7 +375,7 @@ if let unwrappedCount = name1?.count {
 
 
 
-/**
+/*
  Optional binding: You use ["if let" or "guard let"] to check if an optional has a value and assign it to a new constant. This is a safe way to unwrap an optional. For example:
  */
 
@@ -375,10 +392,14 @@ if let unwrappedName = name {
     print("name is nil")
 }
 
-/**
+
+
+/*
 Optional Binding ( "if le" OR "guard let": How to use guard let in optional binding : Example.
 Optional binding allows you to check if the optional contains a value and, if so, safely unwrap and use that value within a specific scope
  */
+
+
 var surname: String? = "Nebo"
 if let unwrappedName = surname {
     print(unwrappedName.count)
@@ -481,6 +502,9 @@ func calculateSquare(number: Int) -> Int {
 let iResult1 = calculateSquare(number: 5)
 print(iResult1)
 
+
+
+
 func addTwo(a: Int, b: Int) -> Int {
     return a + b
 }
@@ -488,11 +512,18 @@ func addTwo(a: Int, b: Int) -> Int {
 let iResult2 = addTwo(a: 8, b: 8)
 print(iResult2)
 
+
+
+
 func findMaximum(numbers: [Int]) -> Int? {
     return numbers.max()
 }
 let myMax = findMaximum(numbers: [1,2,3,5,5,82,834])
 print(myMax ?? 0)
+
+
+
+
 
 func concatenateString(first: String, second: String) -> String {
     return  first + second + "Welcome to the programm"
