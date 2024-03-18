@@ -297,7 +297,6 @@ class iBook {
     
     init(title: String, author: String) {
         self.title = title
-        Swift Pass By Value and Refernce
         self.author = author
     }
 }

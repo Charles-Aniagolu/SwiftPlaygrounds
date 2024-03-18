@@ -9,5 +9,10 @@
         <page name='Swift Pass By Value and Reference'/>
         <page name='Swift Generics'/>
         <page name='Swift Reading values and Assigning Values'/>
+        <page name='Closures and Enumerations'/>
+        <page name='Advanced Swift Concepts'/>
+        <page name='Protocols and Protocol Programming'/>
+        <page name='Classes'/>
+        <page name='Deferences in Global and Other Function'/>
     </pages>
 </playground>
