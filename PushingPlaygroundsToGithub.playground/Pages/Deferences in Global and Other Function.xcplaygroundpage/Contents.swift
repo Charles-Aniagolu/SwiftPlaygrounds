@@ -2,7 +2,7 @@
 
 import Foundation
 
-v// Global Function
+// Global Function
 func greet(name: String) {
     print("Hello, \(name)!")
 }
