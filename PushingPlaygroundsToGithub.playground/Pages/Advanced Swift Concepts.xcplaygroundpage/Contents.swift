@@ -271,3 +271,257 @@ print(uppercasedNames)
 let result10 = { (num1: Int, num2: Int) -> Int in
     return num1 + num2
 }(5, 3) // Defining and calling the closure inline
+
+
+
+/*
+ 
+ Certainly! Let's revisit the questions you've asked about **generics**:
+
+ 1. **Generics Basics:
+ Swift Generics are a powerful feature of the Swift programming language that allow you to write flexible and reusable code. Generics enable you to write:
+     functions,
+     classes,
+     and structures: that can work with any type, rather than just specific ones.
+ 
+ 
+ 
+    - You inquired about the fundamental concept of generics, including their purpose and how they work.
+
+ 2. **Types of Generics**:
+    - You sought clarification on the different types of generics, such as generic methods, generic classes, and generic functions.
+
+ 3. **Use Cases**:
+    - You asked for practical examples of when and how to use generics, including sorting arrays, handling asynchronous callbacks, and creating custom operations.
+
+ 
+ */
+
+
+/*
+ 
+ What is Swift Generics?
+ Swift Generics are a powerful feature of the Swift programming language that allow you to write flexible and reusable code. Generics enable you to write:
+     functions,
+     classes,
+     and structures: that can work with any type, rather than just specific ones.
+ 
+ Syntax of Swift Generics:
+ syntax for defining generics in Swift involves using angle brackets (< >) to specify placeholder types, which are referred to as type parameters.
+
+ Here's a basic example:
+ 
+ */
+
+
+//Example 1: In this example, <T> is a placeholder type parameter. It indicates that the function swap can work with any type. When you call the swap function, Swift infers the actual types based on the types of the arguments you provide.
+func swap<T>(_ a: inout T, _ b: inout T) {
+    let temp = a
+    a = b
+    b = temp
+}
+//calling the function
+var x = 5
+var y = 10
+swap(&x,&y) //x is now 10, y is 5
+print("x is now \(x), y is now \(y)")
+
+var str1 = "Hello"
+var str2 = "World"
+swap(&str1, &str2)
+print("str1 is now \(str1), and str2 is now \(str2)")
+
+
+
+
+
+
+// Different types of Swift Generics: Generic Functions
+
+// Generic Functions:
+func printArray<T>(_ array: [T]) {
+    for element in array {
+        print(element)
+    }
+}
+let myArray = [10,20,49, 50, 79]
+printArray(myArray)
+
+//  OR print the output horizontally
+func printArray2<T>(_ array2: [T]) {
+    for (index, element) in array2.enumerated() {
+        if index == array2.count - 1 {
+            print(element, terminator: "") // Don't add a new line at the end
+        }else{
+            print(element, terminator: " ") // Add a space between elements.
+        }
+    }
+}
+// Calling the function
+let myArray2 = [60, 70, 80, 90, 100]
+printArray2(myArray2)
+print("\n")
+
+
+
+
+//General Structure:
+struct Stack<Element> {
+    var items = [Element] ()
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element? {
+        return items.popLast()
+    }
+}
+//Creating an instance of Stack with Int elements
+var inStack = Stack<Int>()
+
+//Push elements onto the stack
+inStack.push(1)
+inStack.push(2)
+inStack.push(3)
+
+// Creating an instance of Stack with Int elements
+var intStack = Stack<Int>()
+
+// Push elements onto the stack
+intStack.push(10)
+intStack.push(20)
+intStack.push(30)
+
+// Pop elements from the stack
+if let poppedItem = intStack.pop() {
+    print("Popped item: \(poppedItem)")  // output: popped item: 30
+}
+if let poppedItem = intStack.pop() {
+    print("Popped item: \(poppedItem)") // output: popped item: 20
+}
+
+// Push more elements onto the stack
+intStack.push(40)
+intStack.push(50)
+
+// Pop elements from the stack again
+if let poppedItems = intStack.pop() {
+    print("Popped item: \(poppedItems)") // output: Popped item 50
+    
+}
+if let poppedItems = intStack.pop() {
+    print("Popped item: \(poppedItems)") // Output: Popped item: 40
+}
+
+
+// Generic Enums:
+enum Result<T, E: Error> {
+    case success(T)
+    case failure(E)
+}
+
+// Example usage:
+// Assume we have a function that performs division and may throw an error
+
+// Define a custom error type for division by zero
+enum DivisionError: Error {
+    case divisionByeZero
+}
+
+// Define a function that performs division and returns a Result
+func divide(_ dividend: Int, by divisor: Int) -> Result <Int, DivisionError> {
+    guard divisor != 0 else {
+        return .failure(.divisionByeZero) // Return a failure case if the divisor is a zero
+    }
+    let quotient = dividend / divisor
+    return .success(quotient)   // Return a success case with the quotient
+    
+}
+
+// Call the divide function and handle the Result
+let dividend = 10
+let divisor = 2
+let nResult = divide(dividend, by: divisor)
+
+switch nResult {
+case .success(let quotient):
+    print("Division result:  \(dividend) / \(divisor) = \(quotient)")
+case .failure(let error):
+    print("Error occured: \(error)")
+    
+}
+
+
+// Generic Classes:
+
+
+// Define the Box class with a generic type T
+class Box<T> {
+    var value: T   // Property to hold the value of type T
+    
+    
+// Initialize the Box with a value of type T
+    init(value: T) {
+        self.value = value
+    }
+    
+ // Function to print the value of the box
+    func printValue() {
+        print("Value in the box :  \(value)")
+    }
+}
+
+//Example usage:
+// Create instances of Box with different types of values
+
+// Box with an integer value
+let intBox = Box(value: 42)
+intBox.printValue()   //Output: Value in the box: 42
+
+// Box with a string value
+let stringBox = Box(value: "Hello, Swift! ")
+stringBox.printValue()   // Output: value in the box: Hello, Swift!
+
+
+// Box with a boolean value
+let boolBox = Box(value: true)
+boolBox.printValue() // Output: Value in the box: true
+
+
+//Type Constraints with Generics:
+
+
+// Define the findLargest function with a generic type T that conforms to Comparable
+func findLargest<T: Comparable>(_ array: [T]) -> T? {
+    
+    
+    // Check if the array is empty, return nil if so
+    guard var largest = array.first else { return nil}
+    for element in array {
+        if element > largest {
+            largest = element
+        }
+    }
+    
+    // Return the largest element found
+    return largest
+}
+// Example usage:
+// Call the findLargest function with arrays of different types
+
+// Array of integers
+let intArray = [5, 10, 3, 8, 15]
+if let largestInt = findLargest(intArray) {
+    print("Largest element in intArray:  \(largestInt)")  // Output: Largest element in intArray: 15
+}
+  
+// Array of doubles
+let doubleArray = [3.5, 2.8, 7.2, 5.1, 4.9]
+if let largestDouble = findLargest(doubleArray) {
+    print("Largest element in doubleArray: \(largestDouble)") // Output: Largest element in doubleArray: 7.2
+}
+
+// Array of strings
+let stringArray = ["apple", "banana", "orange", "grape", "kiwi"]
+if let largestString = findLargest(stringArray) {
+    print("Largest element in stringArray: \(largestString)") // Output: Largest element in stringArray: orange
+}
