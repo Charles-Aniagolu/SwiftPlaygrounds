@@ -274,47 +274,43 @@ let result10 = { (num1: Int, num2: Int) -> Int in
 
 
 
-/*
- 
- Certainly! Let's revisit the questions you've asked about **generics**:
 
- 1. **Generics Basics:
- Swift Generics are a powerful feature of the Swift programming language that allow you to write flexible and reusable code. Generics enable you to write:
+
+
+//Generics Basics:
+
+/*
+1.  Swift Generics are a powerful feature of the Swift programming language that allow you to write flexible and reusable code. Generics enable you to write:
      functions,
      classes,
      and structures: that can work with any type, rather than just specific ones.
  
  
+    What is the fundamental concept of Generics and how they work?
+    - Generics in Swift allow us to write flexible and reusable code that works with various data types while preserving type safety.
  
-    - You inquired about the fundamental concept of generics, including their purpose and how they work.
+    - They enable us to create functions, methods, classes and data structures that can operate on different types without duplicating code.
+ 
+    - Generics are implemented using type parameters, which act as placeholders for actual data types.
+    
 
- 2. **Types of Generics**:
-    - You sought clarification on the different types of generics, such as generic methods, generic classes, and generic functions.
+ 2. Types of Generics:
+    - Generic can be classified into generic methods, generic classes, generic functions and structures.
 
- 3. **Use Cases**:
-    - You asked for practical examples of when and how to use generics, including sorting arrays, handling asynchronous callbacks, and creating custom operations.
+ 3. Use Cases:
+    - It includes sorting arrays, handling asynchronous callbacks, and creating custom operations.
 
  
- */
+ 4. Swift Generics Syntax:
+   - Syntax for defining generics in Swift involves using angle brackets (< >) to specify placeholder types, which are referred to as type parameters.
 
-
-/*
- 
- What is Swift Generics?
- Swift Generics are a powerful feature of the Swift programming language that allow you to write flexible and reusable code. Generics enable you to write:
-     functions,
-     classes,
-     and structures: that can work with any type, rather than just specific ones.
- 
- Syntax of Swift Generics:
- syntax for defining generics in Swift involves using angle brackets (< >) to specify placeholder types, which are referred to as type parameters.
-
- Here's a basic example:
+ Below are some basic example:
  
  */
 
 
-//Example 1: In this example, <T> is a placeholder type parameter. It indicates that the function swap can work with any type. When you call the swap function, Swift infers the actual types based on the types of the arguments you provide.
+//Function Swap. Example 1: In this example, `<T>` is a placeholder type parameter. It indicates that the `swap` function can work with any type. When you call the `swap` function, Swift infers the actual types based on the types of the arguments you provide.
+
 func swap<T>(_ a: inout T, _ b: inout T) {
     let temp = a
     a = b
@@ -325,6 +321,9 @@ var x = 5
 var y = 10
 swap(&x,&y) //x is now 10, y is 5
 print("x is now \(x), y is now \(y)")
+
+// The benefit of Generic is that with one function, we can create different types as in this case. Ordinarily, i would have create another function specifically to print String values.
+
 
 var str1 = "Hello"
 var str2 = "World"
