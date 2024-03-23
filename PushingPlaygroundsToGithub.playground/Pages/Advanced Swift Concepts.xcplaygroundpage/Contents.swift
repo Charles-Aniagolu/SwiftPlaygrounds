@@ -3,11 +3,15 @@
 import Foundation
 
 /*
- Closures in Swift are self-contained blocks of functionality that can be passed around and used in your code. They are similar to anonymous functions, lambdas, and blocks in other programming languages. Closures can capture and store references to any constants and variables from the context in which they’re defined. Swift handles memory management for capturing automatically.
+ Closures in Swift are self-contained blocks of functionality that can be passed around and used in your code. 
+They are similar to anonymous functions, lambdas, and blocks in other programming languages.
+Closures can capture and store references to any constants and variables from the context in which
+they’re defined. Swift handles memory management for capturing automatically.
  
  
  
- closures in Swift don't have a name in their syntax. Unlike functions, which have a defined name, closures are anonymous blocks of code that can be assigned to variables or passed as arguments to functions.
+ closures in Swift don't have a name in their syntax. Unlike functions, which have a defined name, 
+closures are anonymous blocks of code that can be assigned to variables or passed as arguments to functions.
 
  Here's the basic syntax of a closure in Swift:
 
@@ -21,11 +25,15 @@ import Foundation
  In the above syntax:
 
  - `{}`: These curly braces denote the beginning and end of the closure.
- - `(parameters)`: Inside the parentheses, you can list the input parameters that the closure takes, if any. This part is optional, depending on whether the closure requires input parameters.
- - `ReturnType`: After the arrow `->`, you specify the return type of the closure if it returns a value. This part is also optional, depending on whether the closure returns a value.
+ - `(parameters)`: Inside the parentheses, you can list the input parameters that the closure takes, if any.
+This part is optional, depending on whether the closure requires input parameters.
+ - `ReturnType`: After the arrow `->`, you specify the return type of the closure if it returns a value. 
+This part is also optional, depending on whether the closure returns a value.
  - `in`: This keyword separates the parameter list and return type from the closure body.
 
- Since closures are anonymous, they are typically assigned to variables or passed directly as arguments to functions without being given a name. However, you can assign a closure to a variable and then refer to it by that variable name.
+ Since closures are anonymous, they are typically assigned to variables or passed directly as arguments 
+to functions without being given a name. However, you can assign a closure to a variable and then refer to 
+it by that variable name.
       
 */
 
@@ -77,7 +85,8 @@ let greet: (String) -> String = { name in
 
 // Closure Capturing
 /*
- Closures capture and store references to variables and constants from the surrounding context in which they are defined. This ensures that the values are available even if the variables go out of scope.
+ Closures capture and store references to variables and constants from the surrounding context 
+in which they are defined. This ensures that the values are available even if the variables go out of scope.
  */
 
 func makeIncrementer(incrementAmount: Int) -> () -> Int {
@@ -294,14 +303,17 @@ let result10 = { (num1: Int, num2: Int) -> Int in
 
  
  4. Swift Generics Syntax:
-   - Syntax for defining generics in Swift involves using angle brackets (< >) to specify placeholder types, which are referred to as type parameters.
+   - Syntax for defining generics in Swift involves using angle brackets (< >) to specify placeholder types,
+which are referred to as type parameters.
 
  Below are some basic examples:
  
  */
 
 
-//Function Swap. Example 1: In this example, `<T>` is a placeholder type parameter. It indicates that the `swap` function can work with any type. When you call the `swap` function, Swift infers the actual types based on the types of the arguments you provide.
+//Function Swap. Example 1: In this example, `<T>` is a placeholder type parameter. It indicates that the 
+`swap` function can work with any type. When you call the `swap` function, Swift infers the actual types
+based on the types of arguments you provide.
 
 func swap<T>(_ a: inout T, _ b: inout T) {
     let temp = a
@@ -314,7 +326,8 @@ var y = 10
 swap(&x,&y) //x is now 10, y is 5
 print("x is now \(x), y is now \(y)")
 
-// The benefit of Generic is that with one function, we can create different types as in this case. Ordinarily, i would have create another function specifically to print String values.
+// The benefit of Generic is that with one function, we can create different types as in this case. Ordinarily,
+I would have created another function specifically to print String values.
 
 
 var str1 = "Hello"
@@ -514,5 +527,6 @@ if let largestDouble = findLargest(doubleArray) {
 // Array of strings
 let stringArray = ["apple", "banana", "orange", "grape", "kiwi"]
 if let largestString = findLargest(stringArray) {
-    print("Largest element in stringArray: \(largestString)") // Output: Largest element in stringArray: orange
+    print("Largest element in stringArray: \(largestString)") // Output: Largest element in stringArray:
+ orange
 }
