@@ -140,7 +140,8 @@ print(sortedSpecialNames)
 
 // Closure and Reference Type:
 /*
- Closures are reference types in Swift. When a closure is assigned to a variable or passed as an argument to a function, the reference to the closure is captured.
+ Closures are reference types in Swift. When a closure is assigned to a variable or passed as
+an argument to a function, the reference to the closure is captured.
  */
 
 var closure1: () -> Void = { print("Closure1")}
