@@ -271,22 +271,24 @@ let result10 = { (num1: Int, num2: Int) -> Int in
 
 
 
-
-//Generics Basics:
+// ***** Swift Generics Basics Starts from here ********
 
 /*
-1.  Swift Generics are a powerful feature of the Swift programming language that allow you to write flexible and reusable code. Generics enable you to write:
+1.  Swift Generics are a powerful feature of the Swift programming language that allow you
+to write flexible and reusable code. Generics enable you to write:
      functions,
      classes,
      and structures: that can work with any type, rather than just specific ones.
  
  
     What is the fundamental concept of Generics and how do they work?
-    - Generics in Swift allow us to write flexible and reusable code that works with various data types while preserving type safety.
+    - Generics in Swift allow us to write flexible and reusable code that works with various data types 
+   while preserving type safety.
  
-    - They enable us to create functions, methods, classes and data structures that can operate on different types without duplicating code.
+    - They enable us to create functions, methods, classes and data structures that can operate on 
+      different types without duplicating code.
  
-    - Generics are implemented using type parameters, which act as placeholders for actual data types.
+    - Generics are implemented using type parameters, which act as placeholders for actual data typ  es.
     
 
  2. Types of Generics:
@@ -345,9 +347,6 @@ swap(&str1, &str2)
 print("str1 is now \(str1), and str2 is now \(str2)")
 
 
-
-
-// ***** Swift Generics Stars from here ********
 
 
 // Different types of Swift Generics: Generic Functions
