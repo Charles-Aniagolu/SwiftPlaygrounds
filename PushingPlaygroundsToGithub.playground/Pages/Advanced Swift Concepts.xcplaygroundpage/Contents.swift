@@ -7,39 +7,31 @@ import Foundation
  
  
  
-      Closure Syntax
- 
-     { (parameters) -> ReturnType in {
-     Statements
-     }
- 
- 
  closures in Swift don't have a name in their syntax. Unlike functions, which have a defined name, closures are anonymous blocks of code that can be assigned to variables or passed as arguments to functions.
 
- Here's a basic syntax of a closure in Swift:
+ Here's the basic syntax of a closure in Swift:
 
- ```swift
  { (parameters) -> ReturnType in
      // Closure body
      // Perform operations using parameters
      // Return value of ReturnType if applicable
  }
- ```
+ 
 
  In the above syntax:
 
  - `{}`: These curly braces denote the beginning and end of the closure.
  - `(parameters)`: Inside the parentheses, you can list the input parameters that the closure takes, if any. This part is optional, depending on whether the closure requires input parameters.
- - `ReturnType`: After the arrow `->`, you specify the return type of the closure, if it returns a value. This part is also optional, depending on whether the closure returns a value.
+ - `ReturnType`: After the arrow `->`, you specify the return type of the closure if it returns a value. This part is also optional, depending on whether the closure returns a value.
  - `in`: This keyword separates the parameter list and return type from the closure body.
 
  Since closures are anonymous, they are typically assigned to variables or passed directly as arguments to functions without being given a name. However, you can assign a closure to a variable and then refer to it by that variable name.
-
       
 */
 
-/*
- 
+
+
+ /*
  Closure as Self-contained blocks of functionality:
  A closure is like a compact function that can be defined inline within your code.
  It captures variables and constants from its surrounding context, making it self-contained.
@@ -49,7 +41,7 @@ import Foundation
 
 //Function Declaration and Definition Syntax
 
-//Declaratiion
+//Declaration
 var closureName: (Int) -> Int
 
 //Definition
@@ -75,8 +67,8 @@ print(additionClosure(40, 50))
 
 
 // popular and Easy Closure
-let substract: (Int, Int) -> Int = {$0 - $1 }
-print(substract(30, 15))
+let subtract: (Int, Int) -> Int = {$0 - $1 }
+print(subtract(30, 15))
 
 let greet: (String) -> String = { name in
     return "Hello, \(name) !"
@@ -144,7 +136,7 @@ let specialNames = ["Alice", "Bob", "Charles"]
 let sortedSpecialNames = specialNames.sorted {$0 < $1}
 print(sortedSpecialNames)
 
-// Closure and Reference Typea:
+// Closure and Reference Type:
 /*
  Closures are reference types in Swift. When a closure is assigned to a variable or passed as an argument to a function, the reference to the closure is captured.
  */
@@ -286,7 +278,7 @@ let result10 = { (num1: Int, num2: Int) -> Int in
      and structures: that can work with any type, rather than just specific ones.
  
  
-    What is the fundamental concept of Generics and how they work?
+    What is the fundamental concept of Generics and how do they work?
     - Generics in Swift allow us to write flexible and reusable code that works with various data types while preserving type safety.
  
     - They enable us to create functions, methods, classes and data structures that can operate on different types without duplicating code.
@@ -304,7 +296,7 @@ let result10 = { (num1: Int, num2: Int) -> Int in
  4. Swift Generics Syntax:
    - Syntax for defining generics in Swift involves using angle brackets (< >) to specify placeholder types, which are referred to as type parameters.
 
- Below are some basic example:
+ Below are some basic examples:
  
  */
 
@@ -431,7 +423,7 @@ func divide(_ dividend: Int, by divisor: Int) -> Result <Int, DivisionError> {
     guard divisor != 0 else {
         return .failure(.divisionByeZero) // Return a failure case if the divisor is a zero
     }
-    let quotient = dividend / divisor
+    let quotient = dividend/divisor
     return .success(quotient)   // Return a success case with the quotient
     
 }
