@@ -4,8 +4,8 @@ import Foundation
 import UIKit
 
 
-/*
- A protocol in Swift is a blueprint of methods, properties, and 
+/**
+ A protocol in Swift is a blueprint of methods, properties, and
  other requirements that a type must conform to. It defines a
  set of rules or expectations that a type needs to fulfill to
  be considered as conforming to that protocol.
