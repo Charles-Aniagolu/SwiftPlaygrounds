@@ -16,33 +16,43 @@ import UIKit
  Here's what you need to know about these properties:
 
  1. Property Name and Type: The protocol specifies the name and type of the required properties, 
-    but it doesn't specify whether they should be stored properties (holding a value) or computed properties 
-    (calculated on the fly). It only sets the expectations for what the property should be able to do.
+    but it doesn't specify whether they should be stored properties (holding a value) or computed 
+    properties (calculated on the fly). It only sets the expectations for what the property 
+    should be able to do.
 
  2. Gettable and Settable: The protocol defines whether each property must be read-only (gettable) 
     or both readable and writable (gettable and settable).
    - If a property must be gettable and settable, it cannot be satisfied by a constant stored property 
     (which can't be changed) or a read-only computed property.
-   - If the protocol only requires a property to be gettable, it's valid for the property to be settable as well, if needed for your code.
+   - If the protocol only requires a property to be gettable, it's valid for the property 
+     to be settable as well, if needed for your code.
 
- 3. Declaration in Protocol: Property requirements in a protocol are always declared as variable properties using the `var` keyword.
+ 3. Declaration in Protocol: Property requirements in a protocol are always declared as 
+    variable properties using the `var` keyword.
 
      - For gettable properties only, use `{ get }` after the type declaration.
      
-     - For properties that are both gettable and settable, use `{ get set }` after the type declaration.
+     - For properties that are both gettable and settable, use `{ get set }` after the 
+       type declaration.
 
- - To summarize, protocols allow you to define a blueprint for properties that types conforming to the protocol must implement. The protocol 
-   specifies the name, type, and access level of these properties, giving flexibility in how they are implemented by conforming types.
+ - To summarize, protocols allow you to define a blueprint for properties that types conforming to the
+    protocol must implement. The protocol 
+     specifies the name, type, and access level of these properties, giving flexibility 
+     in how they are implemented by conforming types.
  
- - Swift Protocol use concrete data types that can adopt a protocol by conforming to its requirements. When a type conforms to protocol, 
-   it means that the type implements all the methods, properties, and other requirements defined by the protocol: Examples of Types: struct, enum, Classes.
+ - Swift Protocol use concrete data types that can adopt a protocol by conforming to its requirements.
+    When a type conforms to protocol, 
+   it means that the type implements all the methods, properties, and other requirements defined by 
+   the protocol: Examples of Types: struct, enum, Classes.
  
  Concrete Types
  
- - In Swift, a type is considered concrete if it can be instantiated directly, meaning you can create instances of that type.
-    Concrete types have methods and properties associated with them, and can be customized as needed.In contrast, a protocol
-    itself is not a concrete type because it cannot be directly instantiated. However, types that conform to a protocol 
-    can be concrete types and are capable of instantiation.
+ - In Swift, a type is considered concrete if it can be instantiated directly, meaning you can create 
+    instances of that type.
+    Concrete types have methods and properties associated with them, and can be customized as needed.
+    In contrast, a protocol
+    itself is not a concrete type because it cannot be directly instantiated. However, types that
+     conform to a protocol can be concrete types and are capable of instantiation.
  
  
     - Examples of concrete types in Swift include:
@@ -74,16 +84,19 @@ protocol Animal {
 
  Property Name and Type:
 
- name: This property is a String type and represents the name of the animal. It's declared as a gettable property only,
+ name: This property is a String type and represents the name of the animal. It's declared as 
+ a gettable property only,
        meaning it can be read but not modified after initialization.
        Gettable and Settable:
 
- age: This property is an Int type and represents the age of the animal. It's declared as both gettable and settable,
+ age: This property is an Int type and represents the age of the animal. It's declared as both 
+  gettable and settable,
       allowing us to read and modify the age of the animal.
 
 
       Declaration in Protocol:
-        color: This property is a String type and represents the color of the animal. It's declared as a gettable property only in the protocol,
+        color: This property is a String type and represents the color of the animal. It's declared as 
+        a gettable property only in the protocol,
         meaning it can be read but not modified after initialization.
  */
 
@@ -122,7 +135,8 @@ struct Person: CustomStringConvertible {
 let person = Person(name: "Donald", age: 73)
 print(person)
 /*
- Explanation: The Person struct conforms to the CustomStringConvertible protocol by implementing the description 
+ Explanation: The Person struct conforms to the CustomStringConvertible protocol by implementing the 
+description 
   property requirement. This allows instances of Person to provide a custom textual representation.
  */
 
@@ -139,7 +153,8 @@ class Vehicle: Equatable {
         self.model = model
         self.year = year
     }
-    static func == (lhs: Vehicle, rhs: Vehicle) -> Bool { // Here it's the equality operator that implements the protocol
+    static func == (lhs: Vehicle, rhs: Vehicle) -> Bool { // Here it's the equality operator that 
+     implements the protocol
         
         return lhs.model == rhs.model && lhs.year == rhs.year
     }
@@ -149,7 +164,8 @@ class Vehicle: Equatable {
  
  
 /*
-Explanation: The Vehicle class conforms to the Equatable protocol by implementing the == operator requirement. 
+Explanation: The Vehicle class conforms to the Equatable protocol by implementing the == operator
+requirement. 
 This allows instances of Vehicle to be compared for equality using the == operator.
  */
 
@@ -199,7 +215,8 @@ print(numbers1 < numbers3) // Output: true
 
 
 
-//Example 1: Define a protocol for geometric shapes, where each shape has properties like area and perimeter.
+//Example 1: Define a protocol for geometric shapes, where each shape has properties like area 
+//and perimeter.
 
 // Defining the Shape protocol
 protocol Shape {
@@ -581,7 +598,8 @@ print("Wallet Balance: \(wallet.balance)") // Output: Wallet Balance: 0.0
 */
 
 
-// Defining custom initializers specifically Types: Enum, struct and class conforming to the Account pprotocol
+// Defining custom initializers specifically Types: Enum, struct and class conforming to
+//the Account pprotocol
 
 
 
