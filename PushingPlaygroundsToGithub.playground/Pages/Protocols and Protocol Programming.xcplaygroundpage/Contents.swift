@@ -371,6 +371,8 @@ struct Book: Printable {
     }
 }
 
+
+/*
 // Call and print the method
 let myBook = Book()
 myBook.printInfo() // Output: Printing book information...
@@ -378,7 +380,7 @@ myBook.printInfo() // Output: Printing book information...
 
 // Protocol Oriented-Programming
 
-/*
+
 // Define a protocol
 protocol Vehicle {
     var speed: Double { get set }
@@ -441,3 +443,194 @@ let difference = calculator.subtract(10, 4)
 
 print("Sum: \(sum)") // Output: Sum: 8
 print("Difference: \(difference)") // Output: Difference: 6
+
+
+
+
+
+/*
+
+// Define a protocol with a gettable and settable property requirement
+protocol Account {
+    var balance: Double { get set}
+    
+}
+
+// Conform a class to the protocol with a variable stored property
+class BankAccount: Account {
+    var balance: Double
+    init(initialBalance: Double) {
+        self.balance = initialBalance
+    }
+}
+
+// Conform another class to the protocol with a constant stored property
+class Wallet: Account {
+    var balance: Double //need to make balance variable to satisfy the protocol property requirement
+    
+    init(initialBalance: Double) {
+        self.balance = initialBalance
+    }
+    
+}
+
+// Create instances of the conforming classes
+let bankAccount = BankAccount(initialBalance: 1000.0)
+let wallet = Wallet(initialBalance: 0.0) // initialize wallet with an initial balance
+
+// Print the balance o fhte bank Account and Wallet
+print("Bank Account Balance: \(bankAccount.balance)")
+print("Wallet Balance  \(wallet.balance)")
+
+*/
+
+
+/*
+
+// Define a protocol with a gettable and settable property requirement
+protocol Account {
+    var balance: Double { get set}
+    
+}
+
+//Defining a struct conforming to the Account Protocol
+struct BankAccount: Account {
+    var balance: Double
+    
+    //Defining a struct to conforming to the Account protocol
+    init(initialBalance: Double) {
+        self.balance = initialBalance
+    }
+}
+
+struct Wallet: Account {
+    var balance: Double
+
+  // Define an initializer to set the initial balance
+    init(initialBalance: Double){
+         self.balance = initialBalance
+  }
+}
+
+//Creating instances of each instance
+let bankAccount = BankAccount(initialBalance: 2000.0)
+let wallet = BankAccount(initialBalance: 0.0)
+
+// Access and print the balance of each instance
+print("BankAccount balance \(bankAccount.balance)")
+print("Wallet balance  \(wallet.balance)")
+
+
+
+
+
+// Another way of doing the same thing: struct initializer
+
+
+// Define a protocol with a gettable and settable property requirement
+protocol Account {
+    var balance: Double { get set }
+}
+
+// Define a struct BankAccount that conforms to the Account protocol
+struct BankAccount: Account {
+    var balance: Double
+}
+
+// Define a struct Wallet that conforms to the Account protocol
+struct Wallet: Account {
+    var balance: Double
+}
+
+// Custom initializer specifically for struct conforming to the Account protocol
+extension BankAccount {
+    init(initialBalance: Double) {
+        self.balance = initialBalance
+    }
+}
+
+// Custom initializer specifically for struct conforming to the Account protocol
+extension Wallet {
+    init(initialBalance: Double) {
+        self.balance = initialBalance
+    }
+}
+
+// Create instances of BankAccount and Wallet using the custom initializers
+let bankAccount = BankAccount(initialBalance: 1000.0)
+let wallet = Wallet(initialBalance: 0.0)
+
+// Accessing properties
+print("Bank Account Balance: \(bankAccount.balance)") // Output: Bank Account Balance: 1000.0
+print("Wallet Balance: \(wallet.balance)") // Output: Wallet Balance: 0.0
+*/
+
+
+// Defining custom initializers specifically Types: Enum, struct and class conforming to the Account pprotocol
+
+
+
+
+// Define a protocol with a gettable and settable property requirement
+protocol Account {
+    var balance: Double { get set}
+    
+}
+
+// Defining Enum conforming to the Account Protocol
+enum TransactionType {
+    case deposit(amount: Double)
+    case withdrawal(amount: Double)
+}
+
+// Define a struct BankAccount that conforms to the Account protocol
+struct BankAccount: Account{
+    var balance: Double
+    
+// Custom initializer tor the BankAccount structi conforming to the Account protocol
+    init(initialBalance: Double){
+        self.balance = initialBalance
+    }
+}
+
+
+class Wallet: Account {
+    var balance: Double
+    
+    
+    // Defining custom initializer for the wallet class conforming to the Account protocol
+    init(initialBalance: Double) {
+        self.balance = initialBalance
+    }
+}
+
+// Define a custom initializer for the TransactionType enum
+extension TransactionType {
+    
+    // Initialize a deposit transation
+    init(depositAmount: Double) {
+        self = .deposit(amount: depositAmount)
+    }
+    
+    // Initialize a withdrawal transation
+    init(withdrawalAmount: Double) {
+        self = .withdrawal(amount: withdrawalAmount)
+    }
+    
+}
+
+// Create instances using the custom initializers
+
+let bankAccount = BankAccount(initialBalance: 1000.0)
+let wallet = Wallet(initialBalance: 0.0)
+
+
+// Create deposit and withdrawal transactions using the custom initializers for the TransactionType enum
+let depositTransaction = TransactionType(depositAmount: 500.0)
+let withdrawalTransaction = TransactionType(withdrawalAmount: 200.0)
+
+// Accessing properties
+print("Bank Account Balance:  \(bankAccount.balance)")
+print("Wallet Balance \(wallet.balance)")
+print(depositTransaction)
+print(withdrawalTransaction)
