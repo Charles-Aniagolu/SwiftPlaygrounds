@@ -6,11 +6,27 @@ import Foundation
  - In Swift, structs, enums, and primitive types are passed by value, while classes and functions are passed by
    reference.
  
- - When a function is passed by value, the data inside the function is copied, and any changes made to the data inside
-   the function are only visible within the function’s scope.
+ - When a function is passed by value, the data inside the function is copied, and any changes made to the data inside the function are only visible within the function’s scope.
  
  - On the other hand, when a function is passed by reference, the reference to the data is passed, and any changes
    made to the data inside the function are visible outside the function’s scope.
+ 
+ More information about Pass By Value and Pass By Reference
+  One of the key differences between classes and structs in Swift is how they are treated in terms of memory management, which indeed relates to the pass by reference and pass by value paradigm.
+
+ 1. Classes (Reference Types):
+    - When you pass a class instance to a function or assign it to a variable, you're passing a reference to the same instance in memory.
+    - Modifications made to a class instance through one reference are reflected in all references to that instance, since they all point to the same memory location.
+    - Passing classes by reference means that you're working with the same instance of the class, so changes made to that instance are visible everywhere it's referenced.
+    - Because of this, classes are often used for modeling mutable objects with shared state and behavior.
+
+ 2. Structs (Value Types):
+    - When you pass a struct instance to a function or assign it to a variable, you're passing a copy of the instance.
+    - Modifications made to a struct instance within a function or scope do not affect the original instance, as they operate on a separate copy of the data.
+    - Each instance of a struct is independent, and changes made to one struct instance do not affect other instances, even if they have the same properties.
+    - Structs are passed by value, which means you're working with a unique copy of the data, ensuring that changes made to one instance do not affect others.
+
+ These differences have implications for how you design your code and choose between classes and structs in Swift. Classes are typically used for larger, more complex objects with shared state and behavior, while structs are favored for smaller, lightweight data structures that benefit from immutability and value semantics. Understanding these differences helps in making informed decisions about which type to use in different situations.
  */
 
 
@@ -53,6 +69,8 @@ struct Size {
 }
 //Value Call: Creates the instance of a Size.
 var size = Size(weight: 102.0, height: 192.0)
+print(size.height)
+print(size.weight)
 
 
 //Example 4:
@@ -63,6 +81,8 @@ struct Color {
 }
 //Value Call: Created the instance of a Color
 var color = Color(red: 555.0, green: 7789.0, blue: 1999.0)
+print(color)
+
 
 
 //Example 5:
@@ -72,6 +92,7 @@ struct Book {
 }
 //Value Call: Created the instances of a Book.
 var book = Book(title: "Swift programming - the Big Nerd Ranch Guide", author: "Matthew Mathias and John Gallagher")
+print(book)
 
 
 
@@ -102,8 +123,12 @@ enum Day {
     case monday, tuesday, wednesday, thursday, friday, saturday, sunday
 }
 //Value Call: Creates instances of Day
-let toDay: Day = .friday
-let anothertoDay: Day = .monday
+//let toDay: Day = .friday
+//let anothertoDay: Day = .monday
+let toDay = Day.friday
+let anotherDay = Day.monday
+
+
 
 /*
 //Example 4: enum Planet
