@@ -5,20 +5,29 @@ import Foundation
 /*
  
  1. What is a Class in Swift?
- A class in Swift is a blueprint or template for creating objects. It defines properties (attributes) and methods (functions) that characterize the objects created from it. Classes allow you to model real-world entities, encapsulate data, and provide behavior.
+ A class in Swift is a blueprint or template for creating objects. 
+ It defines properties (attributes) and methods (functions) that
+ characterize the objects created from it. Classes allow you to
+ model real-world entities, encapsulate data, and provide behavior.
 
  2. Key Points about Classes in Swift:
  Here are some essential points to understand:
 
- Properties: Classes can have stored properties (variables) and computed properties (calculated values).
- Initialization: You create an instance of a class by initializing it using an initializer (constructor).
- Inheritance: Classes can inherit properties and methods from other classes.
- Reference Types: Objects created from classes are reference types (stored in memory and accessed via references).
- Access Control: You can control the visibility of class members using access modifiers (public, internal, private, etc.).
+ Properties: Classes can have stored properties (variables) and 
+ computed properties (calculated values).
+ Initialization: You create an instance of a class by initializing 
+ it using an initializer (constructor).
+ Inheritance: Classes can inherit properties and methods from other 
+ classes.
+ Reference Types: Objects created from classes are reference types
+ (stored in memory and accessed via references).
+ Access Control: You can control the visibility of class members
+ using access modifiers (public, internal, private, etc.).
  */
 
 
-// Fundamental of Classes: Define a class using keyword: "class" and Class "name".
+// Fundamental of Classes: Define a class using keyword: "class" 
+//and Class "name".
 
 class PersonCharles {
     var name: String
@@ -140,10 +149,14 @@ print("Breed of the Dog", myDog.breed)
 // Understanding Class Inheritance
 /*
  
- A class can also be created based on existing class by inheriting all the properties and methods of the original class, and can add its own on top. This is called class inheritance or subclassing, the class you inherit from call "base class or super" and the new class is subclass.
+ A class can also be created based on existing class by inheriting
+ all the properties and methods of the original class, and can add 
+ its own on top. This is called class inheritance or subclassing, 
+ the class you inherit from call "base class or super" and the new 
+ class is subclass.
  
  
-    See Animal class example above.
+See Animal class example above.
 */
 
 // Base Class : Vehicle
@@ -174,7 +187,8 @@ class Vehicle {
     }
     
     
-    // Stage 5: Define a class method to display total number of vehicles
+    // Stage 5: Define a class method to display total number of
+    // vehicles
     class func displayNumberOfVehicles() {
         print("Total number of Vehicles: \(numberOfVehicles)")
     }
@@ -188,7 +202,8 @@ class Cars: Vehicle {
     var model: String
     
     
-    // Stage 7: Initialize the subclass with brand, year, and model
+    // Stage 7: Initialize the subclass with brand, year, and 
+    //model
     init(brand: String, year: Int, model: String) {
         self.model = model
         super.init(brand: brand, year: year)
@@ -231,7 +246,9 @@ Vehicle.displayNumberOfVehicles()
 
 
 
-//Final Classes - Does not allow other developers from building their own class based on my class or simply is this class cannot be subclassed.
+//Final Classes - Does not allow other developers from building 
+//their own class based on my class or simply is this class cannot 
+//be subclassed.
 final class Person {
     var name: String
     var age: Int
@@ -292,7 +309,10 @@ for _ in 1...3 {
 // Managing a Shopping Cart
 
 /*
- Suppose we’re building a simple shopping cart system using a struct called ShoppingCart. We want to add items to the cart and calculate the total price. We’ll use the mutating keyword to modify the cart’s properties
+ Suppose we’re building a simple shopping cart system using a
+struct called ShoppingCart. We want to add items to the cart and 
+calculate the total price. We’ll use the mutating keyword to modify
+ the cart’s properties
  */
 
 struct ShoppingCart {
@@ -326,14 +346,20 @@ myCart.display()
 /*
  Explanation:
 
- We’ve defined a ShoppingCart struct with private properties: items (an array of item names) and totalPrice.
- The addItem method is marked as mutating because it modifies the cart’s properties.
+ We’ve defined a ShoppingCart struct with private properties: items
+ (an array of item names) and totalPrice.
+ The addItem method is marked as mutating because it modifies the 
+ cart’s properties.
  We can add items to the cart and see the updated total price.
  Remember:
 
- You can only call mutating methods on variables (not constants) because they modify the instance.
- The mutating keyword ensures that the method can change the value of self.
- This example demonstrates how the mutating keyword allows us to modify properties within a value type. Feel free to experiment further and explore other scenarios!
+ You can only call mutating methods on variables (not constants) 
+ because they modify the instance.
+ The mutating keyword ensures that the method can change the value 
+ of self.
+ This example demonstrates how the mutating keyword allows us to
+ modify properties within a value type. Feel free to experiment
+ further and explore other scenarios!
  
  */
 

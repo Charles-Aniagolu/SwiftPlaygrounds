@@ -33,7 +33,10 @@ import UIKit
 
  Here's what you need to know about these properties:
 
- 1. Property Name and Type: The protocol specifies the name and type of the required properties, but it doesn't specify whether they should be stored properties (holding a value) or computed
+ 1. Property Name and Type: The protocol specifies the name 
+    and type of the required properties, but it doesn't specify
+    whether they should be stored properties (holding a value)
+    or computed
     properties (calculated on the fly). It only sets the expectations for what the property 
     should be able to do.
 
@@ -243,7 +246,8 @@ struct Square: Shape {
     }
 }
 
-// Implementing the Rectangle struct conforming to the Shape protocol
+// Implementing the Rectangle struct conforming to the Shape
+//protocol
 struct Rectangle: Shape {
     let width: Double
     let height: Double
@@ -352,7 +356,8 @@ protocol Printable {
     func printInfo()
 }
 
-// Extend the protocol to provide a default implementation for the printInfo method
+// Extend the protocol to provide a default implementation for 
+//the printInfo method
 extension Printable {
     func printInfo() {
         print("Default implementation of printInfo")
