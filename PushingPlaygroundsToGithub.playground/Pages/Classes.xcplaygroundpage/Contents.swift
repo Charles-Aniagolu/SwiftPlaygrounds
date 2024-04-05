@@ -1,60 +1,174 @@
-// Classes in Swift programming
-
 import Foundation
 
+
+
+// Swift Classes
+
+
+// Definition of Classes in Swift?
+
 /*
+A class in Swift is a blueprint or template for creating objects. It defines properties (attributes) and methods (functions) that characterize the objects created from it. Classes allow you to model real-world entities, encapsulate data, and provide behavior.
+*/
+
+
+
+// Characteristics of a Swift Classes.
+
+/*
+Classes in Swift are defined using:
+- the class keyword followed by the class name.
+- They can contain properties, methods, initializers, deinitializers,
+  and can also inherit characteristics from other classes.
  
- 1. What is a Class in Swift?
- A class in Swift is a blueprint or template for creating objects. 
- It defines properties (attributes) and methods (functions) that
- characterize the objects created from it. Classes allow you to
- model real-world entities, encapsulate data, and provide behavior.
-
- 2. Key Points about Classes in Swift:
- Here are some essential points to understand:
-
- Properties: Classes can have stored properties (variables) and 
- computed properties (calculated values).
- Initialization: You create an instance of a class by initializing 
- it using an initializer (constructor).
- Inheritance: Classes can inherit properties and methods from other 
- classes.
- Reference Types: Objects created from classes are reference types
- (stored in memory and accessed via references).
- Access Control: You can control the visibility of class members
- using access modifiers (public, internal, private, etc.).
  */
 
 
-// Fundamental of Classes: Define a class using keyword: "class" 
+
+// Let's -- discuss the --  characteristics -- mentioned here.
+
+// Example 1: Class definition.
+
+class MyClassName {
+    // properties, methods, etc.
+}
+
+
+
+// Properties:
+/*
+  Properties: Properties are variables or constants associated with a class. They can be either instance properties (belonging to instances of the class) or type properties (associated with the class itself).
+*/
+
+// Example 2: Property Definition
+
+class MyClassName1 {
+    var myProperty: Int = 0 // instance property
+    static var myStaticProperty: String = "Static" // type property
+}
+
+
+
+// Methods:
+/*
+   Methods: Methods are functions associated with a class. Like properties, methods can be instance methods or type methods.
+*/
+
+// Example 3: Method Definition
+
+class MyClassName2 {
+
+    func myMethod() { // instance method
+        // method implementation
+    }
+    
+    static func myStaticMethod() { // static method
+        // type method implementation
+    }
+}
+
+
+
+
+// Initialization:
+/*
+   Initialization: Classes in Swift can have initializers, which are special methods used to create instances of the class. Initializers are invoked when a new instance of the class is created.
+
+*/
+
+// Example 4: initialization- Creating the instance of the Class.
+
+class MyClassName3 {
+
+    var myProperty: Int
+    
+    init(property: Int) {
+        self.myProperty = property
+    }
+}
+
+
+
+// Inheritance:
+
+/*
+Inheritance: Swift supports class inheritance, allowing one class to inherit characteristics from another. The subclass can then customize or extend the behavior of the superclass.
+*/
+
+// Example 5: Inheritance - allow subclass to inherite from the base //class
+
+class ParentClassName {
+    // superclass implementation
+}
+
+class subClass: ParentClassName {
+    // subclass implementation
+}
+
+
+
+// DeInitialization:
+
+/*
+ Deinitialization: Classes can also have deinitializers, which are special methods called when an instance of the class is deallocated from memory.
+ */
+
+// Example 6:
+
+class MyClassName4 {
+    deinit {
+        // deinitializer implementation
+    }
+}
+
+
+
+/*
+ Reference Types: Classes are reference types in Swift, meaning when you assign a class instance to a variable or pass it as an argument to a function, you're actually passing a reference to the same instance in memory.
+ */
+
+// Example 7: Reference Types
+var obj1 = MyClassName4()
+var obj2 = obj1 // obj2 now refers to the same instance as obj1
+
+
+
+
+
+/*
+ Access Control: You can control the visibility of class members
+ using access modifiers (public, internal, private, etc.).
+ 
+ NB; Understanding these fundamental concepts of Swift classes is crucial for building robust and maintainable object-oriented code in Swift.
+ */
+
+
+
+
+// ------------------SMALL--PROGRAMM--IMPLEMENTATION------------
+
+
+
+
+// Fundamental of Classes: Define a class using keyword: "class"
 //and Class "name".
 
 class PersonCharles {
     var name: String
     var height: Int
     
-    init(name: String, height: Int){// Initializer defined within the class body
+    init(name: String, height: Int){
         self.name = name
         self.height = height
     }
 }
 
-// Initialization: Create and instance of the class using the initializer
+// Initialization: Create and instance of the class
 let charlesInfo = PersonCharles(name: "Charles Nebo", height: 192)
 
-//Properties: Define properties within the class.
 
-
-/*
- class PersonCharles {
-     var name: String
-     var height: Int
  
-    // ...
- }
- */
- 
-// Defing Methods (functions within the class.
+// Programm show Instance method definition
 class Charles {
     var name: String
     
@@ -68,18 +182,19 @@ class Charles {
     }
 }
 let charles = Charles(name: "Charles Nebo")
-charles.sayHello() // "Hello, i'm Charles Nebo"
+charles.sayHello()
 
 
 
 
-//Another Example
+// Programm shows a combination of  instance and Class Methods
 class Car {
+    
     // Instance properties
     var brand: String
     var year: Int
     
-    // Type property
+    // Type property or class variable
     static var numberOfCars: Int = 0
     
     
@@ -107,8 +222,27 @@ myCar.startEngine()
 // Call the static method
 Car.printNumberOfCars()
 
-// Inheritance: Creating a subclass that inherits properties
-//and methods fro a superclass
+
+
+
+
+
+
+
+
+
+/*
+Understanding Class Inheritance
+ 
+ A class can also be created based on existing class by inheriting
+ all the properties and methods of the original class, and can add
+ its own on top. This is called class inheritance or subclassing,
+ the class you inherit from call "base class or super" and the new
+ class is subclass.
+
+See Animal class example above.
+*/
+
 
 class Animal {
     var species: String
@@ -146,22 +280,10 @@ print("Breed of the Dog", myDog.breed)
 
 
 
-// Understanding Class Inheritance
-/*
- 
- A class can also be created based on existing class by inheriting
- all the properties and methods of the original class, and can add 
- its own on top. This is called class inheritance or subclassing, 
- the class you inherit from call "base class or super" and the new 
- class is subclass.
- 
- 
-See Animal class example above.
-*/
 
-// Base Class : Vehicle
+// Vehicle Class Definition
 
-// // Stage 1: Define the base class Vehicle
+// Stage 1: Define the base class Vehicle
 class Vehicle {
     var brand: String
     var year: Int
@@ -180,7 +302,6 @@ class Vehicle {
         print("\(brand) is starting ..")
     }
     
-    
     // Stage 4: Defines an instance method to stop the vehicle
     func stop(){
         print("\(brand) is stoppint...")
@@ -193,200 +314,131 @@ class Vehicle {
         print("Total number of Vehicles: \(numberOfVehicles)")
     }
 }
-    
-// Subclass: Car
-
-
-// Stage 6: Define a subclass Car inheriting from Vehicle
-class Cars: Vehicle {
-    var model: String
-    
-    
-    // Stage 7: Initialize the subclass with brand, year, and 
-    //model
-    init(brand: String, year: Int, model: String) {
-        self.model = model
-        super.init(brand: brand, year: year)
-    }
-    
-    // Stage 8: Override the start() method for Car subclass
-    override func start() {
-        super.start()
-            print("\(brand)  \(model) is revving up...")
-    }
-    
-    // Stage 9: Override the start() method for Car subclass
-   override func stop() {
-        super.stop()
-        print("\(brand) \(model) is slowing down...")
-    }
-
-}
-
-// Example Usages:
-
-// Stage 10: Create instances of Vehicle and Car
-let vehicle1 = Vehicle(brand: "Toyota", year: 2020)
-let vehicle2 = Vehicle(brand: "Honda", year: 2019)
-let car1 = Cars(brand: "Ford", year: 2018, model: "Mustang")
-let car2 = Cars(brand: "Mazda 3", year: 2017, model: "Mazda 3 Grand Touring")
-
-// Stage 11: Call methods
-vehicle1.start()
-vehicle2.stop()
-car1.start()
-car2.stop()
-    
-// Stage 12: Call class method
-Vehicle.displayNumberOfVehicles()
 
 
 
 
 
+// -------- MAPPING ---- PRIVATE --- ACCESS -- CONTROL IN --- SWIFT
+
+ /*
+  
+  Managing a Shopping Cart
+  
+  Suppose we’re building a simple shopping cart system using a
+ struct called ShoppingCart. We want to add items to the cart and
+ calculate the total price. We’ll use the mutating keyword to modify
+  the cart’s properties
+  */
+
+ struct ShoppingCart {
+     private var items: [String]
+     private var totalPrice: Double
+     
+     init(){
+         items = []
+         totalPrice = 0.0
+     }
+     mutating func addItem(_ itemName: String, price: Double) {
+         items.append(itemName)
+         totalPrice += price
+         print("Added '\(itemName)' to the cart. Total price: $\(totalPrice)")
+     }
+     func display() {
+         print("Items in the cart:")
+         for item in items {
+             print("- \(item)")
+         }
+     }
+     
+ }
+
+ // Example usage:
+ var myCart = ShoppingCart()
+ myCart.addItem("iPhone Case", price: 29.99)
+ myCart.addItem("Wireless Earbuds", price: 79.99)
+ myCart.display()
+
+ /*
+  Explanation:
+
+  We’ve defined a ShoppingCart struct with private properties: items
+  (an array of item names) and totalPrice.
+  The addItem method is marked as mutating because it modifies the
+  cart’s properties.
+  We can add items to the cart and see the updated total price.
+  Remember:
+
+  You can only call mutating methods on variables (not constants)
+  because they modify the instance.
+  The mutating keyword ensures that the method can change the value
+  of self.
+  This example demonstrates how the mutating keyword allows us to
+  modify properties within a value type. Feel free to experiment
+  further and explore other scenarios!
+  
+  */
 
 
-//Final Classes - Does not allow other developers from building 
-//their own class based on my class or simply is this class cannot 
-//be subclassed.
-final class Person {
-    var name: String
-    var age: Int
-    
-    
-    init(name: String, age: Int) {
-        self.name = name
-        self.age = age
-    }
-    func introduce() {
-        print("Hello, my name is \(name) and i am \(age) years old")
-    }
-}
-//Usage
- let person = Person(name: "Mike", age: 40)
-print(person.name)
-person.introduce()
+
+ // Example 2: Defining a Library Management Program using private access modifiers
+
+ class Library {
+     private var books: [String] = []
+         
+     func addBook(_ bookTitle: String) {
+         books.append(bookTitle)
+         print("Added '\(bookTitle)' to the Library")
+     }
+     
+     func listBooks() {
+         if books.isEmpty {
+             print("The library is empty")
+         } else {
+             print("Books in the library")
+             for book in books {
+                 print("- \(book)")
+             }
+         }
+     }
+ }
+
+ let myLibrary = Library()
+ print(myLibrary.addBook("Swift Programming"))
+ print(myLibrary.addBook("Design Patterns"))
+ myLibrary.listBooks()
 
 
-// Copying Objects
-class Carpenter {
-    var name = "Eugene Keita"
-}
-// Create the instance of this class and print the its name "Eugene Nebo"
-var carpenter = Carpenter()
-print(carpenter.name)
 
-var carpenterCopy = carpenter
-carpenterCopy.name = "Cyril Bob"
-print(carpenter.name)
-
-
-// Deintiliazer is activate when the instance of a class is destroyed
-class Super {
-    var staff = "John Doe"
-    
-    init(staff: String = "John Doe") {
-        self.staff = staff
-    }
-    
-    func printGreeting() {
-        print("Hello, I'm \(staff)")
-    }
-    
-    deinit {
-        print("\(staff) is no more)")
-    }
-
-}
-
-for _ in 1...3 {
-    let supper = Super()
-    supper.printGreeting()
-    
-}
-    
-
-// Managing a Shopping Cart
-
-/*
- Suppose we’re building a simple shopping cart system using a
-struct called ShoppingCart. We want to add items to the cart and 
-calculate the total price. We’ll use the mutating keyword to modify
- the cart’s properties
- */
-
-struct ShoppingCart {
-    private var items: [String]
-    private var totalPrice: Double
-    
-    init(){
-        items = []
-        totalPrice = 0.0
-    }
-    mutating func addItem(_ itemName: String, price: Double) {
-        items.append(itemName)
-        totalPrice += price
-        print("Added '\(itemName)' to the cart. Total price: $\(totalPrice)")
-    }
-    func display() {
-        print("Items in the cart:")
-        for item in items {
-            print("- \(item)")
-        }
-    }
-    
-}
-
-// Example usage:
-var myCart = ShoppingCart()
-myCart.addItem("iPhone Case", price: 29.99)
-myCart.addItem("Wireless Earbuds", price: 79.99)
-myCart.display()
-
-/*
- Explanation:
-
- We’ve defined a ShoppingCart struct with private properties: items
- (an array of item names) and totalPrice.
- The addItem method is marked as mutating because it modifies the 
- cart’s properties.
- We can add items to the cart and see the updated total price.
- Remember:
-
- You can only call mutating methods on variables (not constants) 
- because they modify the instance.
- The mutating keyword ensures that the method can change the value 
- of self.
- This example demonstrates how the mutating keyword allows us to
- modify properties within a value type. Feel free to experiment
- further and explore other scenarios!
+ // Example Program that creates University Enrollment using Private access
+ class University {
+     private var students: [String] = []
+     
+     func enrollStudents(_ studentName: String) {
+         students.append(studentName)
+         print("Enrolled Student: \(studentName)")
+     }
+     
+     func listStudents() {
+         print("Enrolled student")
+         for student in students {
+             print("- \(student)")
+         }
+     }
+ }
+ // Example Usage
+ let myUniversity = University()
+ myUniversity.enrollStudents("Monica")
+ myUniversity.enrollStudents("Agnes")
+ myUniversity.listStudents()
  
- */
-
-
-
-
-//Next:
-// Understanding Private Access Control in Swift
-
-/*
+ 
  
  
  
 
 
 
-class Singer {
-    var name = "Taylor Swift"
-}
-var singer = Singer()
-
-var singerCopy = singer
-singerCopy.name = "Justin Bieber"
-
-print(singer.name)
-print(singerCopy.name)
-
- */
-
-
+ //Next:
+ 
+ 

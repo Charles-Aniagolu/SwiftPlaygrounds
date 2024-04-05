@@ -3,8 +3,7 @@ import Foundation
 
 /*
 Swift Variable, Constants,Basic Data Types, and Arrays
- Variables hold initial values when they are declared. Also, the type of the initial value should match the declared data type. Examples below
- */
+ Variables hold initial values when they are declared. Also, the type of the initial value should match the declared data type. Examples below */
  
 
 //Here are five example of Swift variables:
@@ -31,8 +30,7 @@ str = str + "!"
 //Here a 5 examples of Swift Constants.
 /*
  
-  Constants are declared using the  "let" keyword. Constants are used to represent values that should not be changed once they are set. The basic syntax for defining Constants in Swift is as follows.  "let" constantName: DataType = initialValue
- */
+  Constants are declared using the  "let" keyword. Constants are used to represent values that should not be changed once they are set. The basic syntax for defining Constants in Swift is as follows.  "let" constantName: DataType = initialValue */
  
 
 
@@ -94,9 +92,6 @@ let message = "I am \(myAge) years old. "
 
 
 
-
-
-
 //String length
 let courseName = "Swift Programming"
 let length = courseName.count
@@ -106,24 +101,10 @@ let sentence = "Swift is powerful"
 let substring = sentence.prefix(5)
  
 
-//Multi-Line Strings
-
-var myStr1 = """
-This the first multiple lines
-declaration in Swift code.
-"""
-
-var myStr2 = """
-This goes \
-over multiple\
-lines
-
-"""
-
 //Doubles and Boolean
-var pi = 3.141
+//var pi = 3.141
 
-var awesome = true 
+//var awesome = true
 
 
 
@@ -131,8 +112,7 @@ var awesome = true
 //Arrays and Dictionaries
 
 //Array annotation
-//var myArray: [elementType] = [element1, element2, element3]ts:
-var myFruits: [String] = ["Apple", "Banan", "Orange"]
+var myFruits: [String] = ["Apple", "Banana", "Orange"]
 
 //Array manipulation
 let firstFruit = myFruits[0]    //accessing the first element
@@ -159,9 +139,19 @@ let numbers = [1,2,3,4,5,6,7]
 //Using array constructor to create new element
 let anotherNumbers = Array(arrayLiteral: 1,2,3,4,5,6)
 
-//Creating a an empty array
-var emptyArray: [Int] = []
-emptyArray = [1,3,5,5]
+// Direct initialization of an array with values
+var emptyArray: [Int] = [1, 3, 5, 5]
+
+/*
+// Since `emptyArray` is declared as `var`, you can append more
+//elements to it later if needed
+// If you want it to be a constant, use `let` instead of `var`
+
+// Print the updated emptyArray
+print(emptyArray)
+
+// Rest of the code remains unchanged */
+
 
 
 //Repeating a Value
