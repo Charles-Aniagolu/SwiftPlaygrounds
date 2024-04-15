@@ -3,14 +3,9 @@ import Foundation
 
 /*
 Swift Variable, Constants,Basic Data Types, and Arrays
- Variables hold initial values when they are declared. Also, the type of the initial value should match the declared data type. Examples below */
+ Variables hold initial values when they are declared. Also, the type of the initial value should match the declared data type. Examples below 
+ */
  
-
-//Here are five example of Swift variables:
-//Basic Syntax for variable definition in Swift are as follows:
-
-
-
 //var variableName: DataType = initialValue
 var age: Int = 25 // Integer variable
 
@@ -27,10 +22,10 @@ str += "!"  //OR
 str = str + "!"
 
 
-//Here a 5 examples of Swift Constants.
 /*
  
-  Constants are declared using the  "let" keyword. Constants are used to represent values that should not be changed once they are set. The basic syntax for defining Constants in Swift is as follows.  "let" constantName: DataType = initialValue */
+  Constants are declared using the  "let" keyword. Constants are used to represent values that should not be changed once they are set. The basic syntax for defining Constants in Swift is as follows.  "let" constantName: DataType = initialValue 
+ */
  
 
 
@@ -101,12 +96,6 @@ let sentence = "Swift is powerful"
 let substring = sentence.prefix(5)
  
 
-//Doubles and Boolean
-//var pi = 3.141
-
-//var awesome = true
-
-
 
 
 //Arrays and Dictionaries
@@ -143,14 +132,15 @@ let anotherNumbers = Array(arrayLiteral: 1,2,3,4,5,6)
 var emptyArray: [Int] = [1, 3, 5, 5]
 
 /*
-// Since `emptyArray` is declared as `var`, you can append more
-//elements to it later if needed
-// If you want it to be a constant, use `let` instead of `var`
+Since `emptyArray` is declared as `var`, you can append more
+elements to it later if needed
+If you want it to be a constant, use `let` instead of `var`
 
-// Print the updated emptyArray
+Print the updated emptyArray
 print(emptyArray)
 
-// Rest of the code remains unchanged */
+ Rest of the code remains unchanged 
+ */
 
 
 

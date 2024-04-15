@@ -14,5 +14,7 @@
         <page name='Protocols and Protocol Programming'/>
         <page name='Classes'/>
         <page name='Deferences in Global and Other Function'/>
+        <page name='Introduction to iOS app Development'/>
+        <page name='Swift and Protocol extensions'/>
     </pages>
 </playground>

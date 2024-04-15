@@ -292,10 +292,6 @@ let singing = Activity.singing(volume: 5)
  Enum Raw Values- You need to assign values to enum so they have meaning. This lets you create them dinamincally and use them in different ways. With Int define in the enum, Swift automatically assigns a number starting from 0 and you can use that number to create an instance of the appropriate enum case.
  */
 
-/*
- Swift Sets
- A set in Swift is an unordered collection of distinct elements. It is used to store unique values of the same type in a collection without any specific order
- */
 
 
 //-----------------------------------------------------------------
@@ -306,10 +302,9 @@ let singing = Activity.singing(volume: 5)
 //Syntax Structure of Sets
 //var setName: Set<Type> = [value10, value20, value30, ...]
 
-//Different Ways of Creating Sets in Swift:
 
 
-// a.
+// Example: a
 var programmingLanguage: Set<String> = Set(["Java", "Swift", "Html", "JavaScript"])
 print(programmingLanguage)
 
@@ -411,7 +406,4 @@ if !subjects.contains("English") {
 let person = (name: "john", age: 30, isStudent: true)
 print(person)
 
-// Type inference.
 
-
-//Complex Types: Enumeration, Sets, Tuples, Dictionaries

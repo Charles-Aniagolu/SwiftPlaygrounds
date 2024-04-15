@@ -1,9 +1,7 @@
-//Function
-
 import Foundation
 
 
-/**
+/*
   A function is a re-usable and self-contained block of code tht performs
  - a specific task. It is a fundamental building block in Swift programming and allows you to organize
  - you code, make it modular, and promote code    reuse.
@@ -15,9 +13,6 @@ Function code annotation
 - return Result
 }
  */
-
-
-//examples of function usage. E.g addition function
 
 //Function definition
 func addNumbers(a: Int, b: Int) -> Int{
@@ -96,20 +91,9 @@ print("fahrenheitToCelcius: \(roundedResult)")
 //Function definition
 func maxOfTwoNumbers(a: Int, b: Int) -> Int {
     //function body
-    return a > b ? a : b // compact way: using ternary conditional operator
+    return a > b ? a : b
 }
-    /*
-     OR a > b ? a : b (meaning)
-     
-     // if a > b return a else return b
-    if a > b {
-        return a
-        
-    }else {
-        return b
-    }
-     */
-
+    
 
 //function call
 let maxResult = maxOfTwoNumbers(a: 300, b: 600)
@@ -159,7 +143,7 @@ print(myfact)
 //-----------------------------------------------------------
 
 //Difference between External and Internal parameter names in Swift
-/**
+/*
  External Parameter Name:
  - It is the name used when calling the function.
  - It provides a clear and descriptive label for each argument.
@@ -173,14 +157,14 @@ print(myfact)
  - It is specified in the function signature, following the external parameter name and separated
    by a space.
  - It helps make the function implementation clear and concise.
+
+
+
+Internal parameter are use inside the function and are not visible to the
+caller. They are used to refer to the values passed to the function.
+here name and message are internal parameters used inside the function to
+refer to values passed to the function.
  */
-
-
-//Internal parameter are use inside the function and are not visible to the
-//caller. They are used to refer to the values passed to the function.
-//here name and message are internal parameters used inside the function to
-//refer to values passed to the function.
-
 
 
 //Internal Parameters: Example 1:
