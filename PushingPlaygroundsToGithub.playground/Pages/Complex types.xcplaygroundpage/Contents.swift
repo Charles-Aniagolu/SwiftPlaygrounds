@@ -18,6 +18,74 @@ import Foundation
 
  */
 
+
+
+//---Different-------Ways ------- of ---- manipulating Swift Arrays ---
+
+
+// Creating an array
+var myNumbers = [8381, 288, 0943, 5114, 9985]
+
+
+// Printing Array Elements
+print(myNumbers)
+
+
+
+// Using a For-in Loop
+for number in myNumbers {
+    print(number)
+}
+
+
+
+// Using the enumerated() Method
+for ( index, number) in myNumbers.enumerated() {
+    print("Elements at index: \(index): \(number)")
+}
+
+
+
+// Using forEach Method
+myNumbers.forEach {number in
+    print(number)  // same output as for -in loop
+}
+
+
+// Using a While Loop
+var index = 0
+while index < myNumbers.count {
+    print(myNumbers[index])
+    index += 1
+}
+
+
+// Using High-Order Function
+/*
+ Swift provides high-order functions like map, filter, and reduce for array manipulation. These functions allow you to transform, filter, or combine array elements
+*/
+
+// Example using Map
+let doubleNumbers = myNumbers.map{$0 * 2}
+print(doubleNumbers)
+
+// Using Input mechanism (readLine()). To take input from the user: readLine() function
+
+print("Enter Your Name:")
+if let input = readLine() {
+    print("Hello, \(input) ! ")
+}
+
+// Output Mechanisms
+print("hello, world")
+
+
+
+
+
+
+//--------------------------More Examples --------------
+
 var iColors: [String] = ["Yellow", "Purple", "Orange", "Green"]
 
 //Access and print elements
@@ -294,12 +362,8 @@ let singing = Activity.singing(volume: 5)
 
 
 
-//-----------------------------------------------------------------
+//---Syntax Structure of Sets------------------------------
 
-
-
-
-//Syntax Structure of Sets
 //var setName: Set<Type> = [value10, value20, value30, ...]
 
 
