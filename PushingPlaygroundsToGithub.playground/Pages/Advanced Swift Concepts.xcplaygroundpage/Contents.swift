@@ -2,42 +2,17 @@
 
 import Foundation
 
+
+
+
+
 /*
- Closures in Swift are self-contained blocks of functionality that can be passed around and used in your code. 
-They are similar to anonymous functions, lambdas, and blocks in other programming languages.
-Closures can capture and store references to any constants and variables from the context in which
-they’re defined. Swift handles memory management for capturing automatically.
+ - Definition**: Closures in Swift are self-contained blocks of functionality used similarly to anonymous functions, lambdas, or blocks in other languages.
+ - Capture Behavior**: They can capture and retain references to constants and variables from their surrounding context.
+ - Memory Management**: Swift automatically handles memory management for captured values.
+ - Anonymous Nature**: Unlike functions, closures in Swift do not have a defined name in their syntax.
  
- Closures in Swift don't have a name in their syntax. Unlike functions, which have a defined name,
-closures are anonymous blocks of code that can be assigned to variables or passed as arguments to functions.
-
- Here's the basic syntax of a closure in Swift:
-
-      Closure Syntax:
-      
-    closures in Swift don't have a name in their syntax:
- 
-     { (parameters) -> ReturnType in {
- 
-     Statements:
-    - Closure body
-    - Perform operations using parameters
-    - Return value of ReturnType if applicable
-     }
- 
-
- In the above syntax:
-
- - `{}`: These curly braces denote the beginning and end of the closure.
- - `(parameters)`: Inside the parentheses, you can list the input parameters that the closure takes, if any.
-This part is optional, depending on whether the closure requires input parameters.
- - `ReturnType`: After the arrow `->`, you specify the return type of the closure if it returns a value. 
-This part is also optional, depending on whether the closure returns a value.
- - `in`: This keyword separates the parameter list and return type from the closure body.
-
- Since closures are anonymous, they are typically assigned to variables or passed directly as arguments 
-to functions without being given a name. However, you can assign a closure to a variable and then refer to 
-it by that variable name.
+ - Usage**: Closures are often assigned to variables or passed directly as arguments to functions without being named, but they can also be assigned to variables for later reference.
 */
 
 
@@ -271,7 +246,7 @@ let result10 = { (num1: Int, num2: Int) -> Int in
 
 
 
-// ***** Swift Generics Basics Starts from here ********
+// Swift Generics Basics Starts from here 
 
 /*
 1.  Swift Generics are a powerful feature of the Swift programming language that allow you
@@ -279,45 +254,6 @@ to write flexible and reusable code. Generics enable you to write:
      functions,
      classes,
      and structures: that can work with any type, rather than just specific ones.
- 
- 
-    What is the fundamental concept of Generics and how do they work?
-    - Generics in Swift allow us to write flexible and reusable code that works with various data types 
-   while preserving type safety.
- 
-    - They enable us to create functions, methods, classes and data structures that can operate on 
-      different types without duplicating code.
- 
-    - Generics are implemented using type parameters, which act as placeholders for actual data typ  es.
-    
-
- 2. Types of Generics:
-    - Generic can be classified into generic methods, generic classes,
-   generic functions and structures.
-
- 3. Use Cases:
-    - It includes sorting arrays, handling asynchronous callbacks, 
- and creating custom operations.
-
- 
- 4. Swift Generics Syntax:
-   - Syntax for defining generics in Swift involves using angle brackets 
- (< >) to specify placeholder types,
-which are referred to as type parameters.
-
- Below are some basic examples:
- 
- */
-
-
-
-
-/*
-Function Swap. Example 1: In this example, `<T>` is a placeholder type parameter. 
- It indicates that the `swap` function can work with any type. When you call 
- the `swap` function, Swift infers the actual types based on the types
- of arguments you provide.
-
  */
 
 func swap<T>(_ a: inout T, _ b: inout T) {

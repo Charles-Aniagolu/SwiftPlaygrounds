@@ -1,18 +1,88 @@
 import Foundation
 
 
+
+
+
+
+
+// 3. Functions
+
+// Function declaration and invocation:
+/**
+ A function in Swift is a self-contained block of code that performs a specific task. It allows you to organize your code, make it modular, and promote code reuse. The declaration of a function includes its name, parameters, return type, and body. Invocation refers to calling a function to execute its code.
+
+ Syntax:
+ func functionName(parameter1: Type, parameter2: Type, ...) -> ReturnType {
+     // Function body
+     // Code to perform a specific task
+     return Result
+ }
+
+ Example:
+ func addNumbers(a: Int, b: Int) -> Int {
+     return a + b
+ }
+
+ // Function call
+ let sum = addNumbers(a: 5, b: 3)
+ print("Sum: \(sum)")
+*/
+
+// Parameters and return values:
+/**
+ Parameters are the values that a function accepts when it's called, and they are defined in the function's parameter list. Return values are the results that a function produces after it's executed. In Swift, both parameters and return values can have external and internal names, which can improve the readability of function calls and the clarity of function implementations.
+
+ Syntax:
+ func functionName(externalName internalName: Type, ...) -> ReturnType {
+     // Function body
+     // Code to perform a specific task
+     return Result
+ }
+
+ Example:
+ func addNumbers(a: Int, b: Int) -> Int {
+     return a + b
+ }
+
+ // Function call
+ let sum = addNumbers(a: 5, b: 3)
+ print("Sum: \(sum)")
+*/
+
+// Function types:
+/**
+ In Swift, functions are first-class citizens, which means they can be assigned to variables, passed as arguments to other functions, and returned from other functions. Function types represent the types of functions in Swift, including parameter types, return type, and whether the function throws an error.
+
+ Syntax:
+ let functionName: (ParameterTypes) -> ReturnType = { parameters in
+     // Function body
+     // Code to perform a specific task
+     return Result
+ }
+
+ Example:
+ let multiply: (Int, Int) -> Int = { a, b in
+     return a * b
+ }
+
+ let product = multiply(4, 5)
+ print("Product: \(product)")
+*/
+
+// Function declaration and invocation
+
+// Parameters and return values
+
+// Function types
+
+
+
 /*
-  A function is a re-usable and self-contained block of code tht performs
- - a specific task. It is a fundamental building block in Swift programming and allows you to organize
- - you code, make it modular, and promote code    reuse.
- 
-Function code annotation
-- func functionName(parameter1: Type, parameter2: type, ...) -> ReturnType{
-- function body
-- Code to perform a specific task
-- return Result
-}
- */
+
+This structure provides additional information about function declaration and invocation, parameters and return values, and function types to support the code provided earlier. Let me know if you need further clarification!
+*/
+
 
 //Function definition
 func addNumbers(a: Int, b: Int) -> Int{
@@ -23,45 +93,38 @@ let sum = addNumbers(a: 5, b: 3)
 print("sum: \(sum)")
 
 
-
 //Example 2: String Concatenation Function
 
 //function Definition
-func concatenateString(str1: String, str2: String) -> String {
+func concatenateString(str1: String, str2: String) -> String{
     return str1 + str2
 }
 //function call
 let resultString = concatenateString(str1: "Hello", str2: "World")
 print("concatenated String:  \(resultString)")
 
-
-
-
 //Example 3. Calculate Area of a Circle
 
 //function definition
-func calculateCircleArea(radius: Double) -> Double {
+func calculateCircleArea(radius: Double) -> Double{
     return 3.14 * radius * radius
 }
 //function call
 let area = calculateCircleArea(radius: 4.0)
 print("Circle Area: \(area)")
 
-
 //Example 4: Check if a number is Even
-func isEven(number: Int) -> Bool {
+func isEven(number: Int) -> Bool{
     return number % 2 == 0
 }
 //function call
 let checkEven = isEven(number: 7)
 print("Is Even? \(checkEven)")
 
-
-
 //Example 5: Greet a User
 
 //function definition
-func greetUser(name: String) -> String {
+func greetUser(name: String) -> String{
     return "Hello, \(name)!"
 }
 
@@ -69,42 +132,35 @@ func greetUser(name: String) -> String {
 let greeting = greetUser(name: "John")
 print(greeting)
 
-
-
 //Example 6: Convert Fahrenheit to Celsius:
 
 //Function definition
-func fahrenheitToCelcius (fahrenheit: Double) -> Double {
+func fahrenheitToCelcius(fahrenheit: Double) -> Double{
     return (fahrenheit - 32) * 5 / 9
-    
 }
 //function call
-let resultFahrenheit =  fahrenheitToCelcius(fahrenheit: 24)
+let resultFahrenheit = fahrenheitToCelcius(fahrenheit: 24)
 
-// Round to the nearest inteter
+// Round to the nearest integer
 let roundedResult = round(resultFahrenheit)
 print("fahrenheitToCelcius: \(roundedResult)")
 
-
-//Example 7: Find the Maximun of Two Numbers.
+//Example 7: Find the Maximum of Two Numbers.
 
 //Function definition
-func maxOfTwoNumbers(a: Int, b: Int) -> Int {
+func maxOfTwoNumbers(a: Int, b: Int) -> Int{
     //function body
     return a > b ? a : b
 }
-    
 
 //function call
 let maxResult = maxOfTwoNumbers(a: 300, b: 600)
 print("the maxOfTwoNumbers: \(maxResult)")
 
-
-
 //Example 8: Generate Fibonacci Sequence.
 
 //Function definition
-func generateFibonacci(n: Int) -> [Int] {
+func generateFibonacci(n: Int) -> [Int]{
     var sequence = [0, 1]
     while sequence.count < n {
         sequence.append(sequence.last! + sequence[sequence.count - 2])
@@ -114,8 +170,6 @@ func generateFibonacci(n: Int) -> [Int] {
 
 let resultFibonacci = generateFibonacci(n: 20)
 print("GenerateFibonacci: \(resultFibonacci)")
-
-
 
 //Example 9: Check if a number is a Palindrome.
 
@@ -127,18 +181,15 @@ func isPalindrome(str: String) -> Bool{
 let myPalindrome = isPalindrome(str: "mom")
 print(myPalindrome)
 
-
-
 //Example 10: Calculate Factorial
 
 // function definition/annotation
-func factorial(n: Int) -> Int {
+func factorial(n: Int) -> Int{
     return n == 0 ? 1 : n * factorial(n: n - 1)
 }
 //function call
 let myfact = factorial(n: 20)
 print(myfact)
-
 
 //-----------------------------------------------------------
 
@@ -150,226 +201,118 @@ print(myfact)
  - It is specified in the function signature, preceding the internal parameter name.
  - It helps improve the readability of the function call.
  
- 
  Internal Parameter Name:
  - It is the name used within the function's implementation.
  - It is used to refer to the parameter's value inside the function body.
  - It is specified in the function signature, following the external parameter name and separated
    by a space.
  - It helps make the function implementation clear and concise.
-
-
-
-Internal parameter are use inside the function and are not visible to the
-caller. They are used to refer to the values passed to the function.
-here name and message are internal parameters used inside the function to
-refer to values passed to the function.
+ 
+ Internal parameters are used inside the function and are not visible to the caller. They are used to refer to the values passed to the function. Here name and message are internal parameters used inside the function to refer to values passed to the function.
  */
-
 
 //Internal Parameters: Example 1:
 
 //Function definition
-func greet(name: String, message: String){
+func greet(name: String, message: String) {
     print("\(name), \(message)")
-    
 }
 // Function call
 greet(name: "John", message: "How are you doing?")
 
-
-
-
 //External Parameters: Example 1:
 /**
  External parameters are used to label the arguments passed to the function.
-- They are visible to the caller and used to make the function more readable.
--  "_" indicates that the first parameter does not have an external parameter
-- names.When calling the function the caller would use external parameter as follows.
-
+ - They are visible to the caller and used to make the function more readable.
+ - "_" indicates that the first parameter does not have an external parameter name.
+ - When calling the function, the caller would use external parameter as follows.
  */
 
-
 //Function definition
-func multiply(_ a: Int, by b: Int) -> Int {
+func multiply(_ a: Int, by b: Int) -> Int{
     return a * b
 }
 // Function Call
 let result = multiply(5, by: 10)
 
-/**
- - Explanation in External Parameter: Example 1:
- - Examples of function with mechanisms labelled parameters
- - here a and b are internal parameters. They are used
- - inside the function to refer to values passed to the
- - function. When calling the function the caller would
- - use the internal parameter names.
- */
-
-
 //Example 2.
-func add(_ a: Int, _ b: Int) -> Int {
+func add(_ a: Int, _ b: Int) -> Int{
     return a + b
 }
 // Function Call
 let total = add(3, 4)
 
-
-
-
 //Example 3.
-func greet(to name: String) {
+func greet(to name: String){
     print("Hello,  \(name)")
 }
 //Function Call
 greet(to: "John")
 
-//Explanation in Example 3.
-/**
- Functions with external parameter only.
- - In example 3, to is the external parameter name used to label the argument passed to the function.
- - When calling the function the caller would use the external parameter name as follows:
- 
- */
-
-
-
-
 //Example 4.
-
 //Function definition
-func calculate(_ a: Int, plus b: Int,  minus c: Int) -> Int {
+func calculate(_ a: Int, plus b: Int, minus c: Int) -> Int{
     return a + b - c
 }
 // Function Call
 let total2 = calculate(5, plus: 6, minus: 7)
 
-
-
 // Example 5
 // Function definition
-func square(_ x: Double) -> Double {
+func square(_ x: Double) -> Double{
     return x * x
 }
-
 // Function call
 let result1 = square(5)
 print(result1)
 
-
-
-
 //Example 6:
 //Function definition
-func greet(_ name: String) {
+func greet(_ name: String){
     print("Hello, \(name)")
 }
 // Function call
 greet("John")
 
-
-
 //Example 7.
-
 //Function definition
-func concatenate(_ str1: String, with str2: String ) -> String {
+func concatenate(_ str1: String, with str2: String) -> String{
     return str1 + str2
 }
 // Function call
 let result2 = concatenate("Swift", with: "Programming")
 print(result2)
 
-
-
-
 //Example 8.
-
 // External parameter: base, Internal parameter: exponent
-func power(_ base: Double, raisedTo exponent: Double) -> Double {
+func power(_ base: Double, raisedTo exponent: Double) -> Double{
     return pow(base, exponent)
 }
 // Function call
 let result3 = power(2, raisedTo: 3)
 
-
 //Example 9
 // External parameter: from, Internal parameter: to
-func copyFile(from source: String, to destination: String) {
+func copyFile(from source: String, to destination: String){
     // Implementation
 }
 // Function call
 copyFile(from: "file.txt", to: "backup/file.txt")
 
-
-
 //Example 10
 // External parameter: with, Internal parameter: and
-func combineStrings(_ first: String, with second: String) -> String {
+func combineStrings(_ first: String, with second: String) -> String{
     return first + second
 }
 // Function call
 let combined = combineStrings("Hello", with: " World")
 
+//-----------------------------------------------------------
 
-
-
-//---------------------------------------------------------------
-
-
-
-//Differences between print and return statements
-
-/**
- 
- The print and return statements serve different purposes in Swift functions.
-
- Print Statement: print is used to display information in the console during the execution of your program.
- - It is typically used for debugging or providing feedback during development.
- - It outputs messages to the console but does not affect the control flow of the program.
- - print is void, meaning it doesn't return a value.
- */
-
-//Example.
-func printMessage(message: String) {
-    print(message)
-}
-//Function Call
-printMessage(message: "Hello, World!")
-
-
-
-//Return Statement.
-/**
- Return Statement:
- - return is used to send a value back from a function to the point where the function was called.
- - It is crucial for functions that are designed to perform a calculation or generate a result.
- - The type of the value returned is specified in the function signature.
- - return terminates the function's execution and passes control back to the calling code.
- */
-
-func myAdd(a: Int, b: Int) -> Int {
-    return a + b
-}
-
-// Function Call
-let result4 = myAdd(a: 3, b: 4)
-print(result4)
-
-
-
-//Summary: Print and Return Statements
-/**
- In summary, print is for displaying messages in the console, primarily for debugging purposes, 
- - and it doesn't affect the program's flow. On the other hand, return is used to provide a value back to
- - the calling code and is essential for functions that perform calculations or generate results.
- */
-
-
-//-----------------------------------------------------------------
 //Summary of Functions in Swift Programming Language
 
 //1. Basic Function: Function Annotation
-func sayHello(){
+func sayHello() {
     print("Hello, Swift")
 }
 sayHello()
@@ -380,41 +323,33 @@ func greet(nameT: String){
 }
 greet(nameT: "Charles")
 
-
-
 //3. Function with Return Types: Function Annotation
-func add(a: Int, b: Int) -> Int {
+func add(a: Int, b: Int) -> Int{
     return a + b
 }
 let sumT = add(a:4, b: 8)
 
-
-//4. Function with External and Internal Parameeter Names: Annotation
-func divide(dividend a: Double, by b: Double) -> Double {
+//4. Function with External and Internal Parameter Names: Annotation
+func divide(dividend a: Double, by b: Double) -> Double{
     return a / b
-    
 }
-
 let quoteient = divide(dividend: 10.0, by: 2.0)
 
-
 //5. Variadic Function: Function Annotation
-func average(_ numbers: Double...) -> Double {
+func average(_ numbers: Double...) -> Double{
     let total = numbers.reduce(0, +)
     return total / Double(numbers.count)
 }
 let avg = average(2.0, 4.0, 6.0, 8.0)
 
-
 //6. Function with Default Parameter Values: Function Annotation
-func power(base: Int, exponent: Int = 2) -> Int {
+func power(base: Int, exponent: Int = 2) -> Int{
     return Int(pow(Double(base), Double(exponent)))
 }
 let resultz = power(base: 3) //exponent defaults to 2
-    
 
 //7. Function with in-Out Parameters:
-func swapValues(_ a: inout Int, _ b: inout Int) {
+func swapValues(_ a: inout Int, _ b: inout Int){
     let temp = a
     a = b
     b = temp
@@ -423,10 +358,9 @@ var x = 5
 var y = 10
 swapValues(&x, &y)
 
-
 //8. Nested Function : Annotation
-func outerFunction() {
-    func innerFunction() {
+func outerFunction(){
+    func innerFunction(){
         print("Insider nested function")
     }
     innerFunction()
@@ -436,43 +370,36 @@ outerFunction()
 //9. Anonymous Function (Closure): Function Annotation
 let multiply: (Int, Int) -> Int = { a, b in
     return a * b
-    
 }
 let product = multiply(4, 5)
 
-
-
-
-//10. Function with Optiional Return Types : Function Annotation
-func findMax(_ numbers: Int...) -> Int? {
-    guard let max = numbers.max() else {
+//10. Function with Optional Return Types : Function Annotation
+func findMax(_ numbers: Int...) -> Int?{
+    guard let max = numbers.max() else{
         return nil
     }
     return max
 }
-
-if let maxNumber = findMax(3,7, 1,9) {
+if let maxNumber = findMax(3,7, 1,9){
     print("Maximum number is  \(maxNumber)")
-}else{
+} else {
     print("No numbers provided")
 }
 
-//11.Recursive Function: Function Annotation
-func factorial(_ n: Int) -> Int {
+//11. Recursive Function: Function Annotation
+func factorial(_ n: Int) -> Int{
     if n == 0 {
         return 1
-        
-    }else{
+    } else {
         return n * factorial(n - 1)
     }
 }
 let fact = factorial(10)
 print(fact)
 
-
 //Throwing Function(Error Handling): Function Annotation
 // Function Annotation
-enum MathError: Error {
+enum MathError: Error{
     case divisionByZero
 }
 
@@ -490,8 +417,6 @@ do {
     print("Error: \(error)")
 }
 
-
-
 //Function inout
 /**
  Definition of inout:
@@ -504,7 +429,6 @@ do {
  inout is typically used with variables of non-constant types, including custom data types such as structures and classes.
 
  Simple Examples:
-
  */
 
 //Define a function that increments a number using iout
@@ -513,26 +437,10 @@ func incrementNumber(_ num: inout Int){
 }
 //Declare a variable outside the function
 var myNumber = 5
-
 //Call the function with inout parameter
 incrementNumber(&myNumber)
-
 //Print the value after the function call
 print("After incrementing: \(myNumber)")
-
-/**
-func swapValues(_ i: inout Int, _ j: inout Int) {
-    let temp = i
-    i = j
-    j = temp
-}
-var i = 5
-var j = 10
-swapValues(&i, &j)
-print("After swapping: i = \(i), y = \(j)")
- 
- n this example, the swapValues function takes two inout parameters (a and b) representing integers. It swaps their values, and the changes are reflected outside the function.
- */
 
 // Example 2: Modifying Array Elements
 func incrementEachElement(_ arr: inout [Int]) {
@@ -545,11 +453,7 @@ var numbers = [1, 2, 3, 4]
 incrementEachElement(&numbers)
 print("After incrementing: \(numbers)")
 
-/**
- Here, the incrementEachElement function increments each element of an array. The changes are observable outside the function.
- 
- */
-//  Example 3: Updating Custom Type
+// Example 3: Updating Custom Type
 struct Point {
     var x: Int
     var y: Int
@@ -563,5 +467,3 @@ func moveToOrigin(_ point: inout Point) {
 var myPoint = Point(x: 5, y: 10)
 moveToOrigin(&myPoint)
 print("After moving to origin: \(myPoint)")
-
- 

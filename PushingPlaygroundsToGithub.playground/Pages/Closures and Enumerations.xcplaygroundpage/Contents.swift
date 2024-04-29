@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+// Closures and Enumerations
 
 import Foundation
 

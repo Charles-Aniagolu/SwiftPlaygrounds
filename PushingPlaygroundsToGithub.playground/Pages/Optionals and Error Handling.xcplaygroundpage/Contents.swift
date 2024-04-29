@@ -1,13 +1,16 @@
-//optionals and safely unwrapping them and error handling in Swift
+// Optionals and Error Handling in Swift
+
 import Foundation
-/**
-- Learn about optionals and safely unwrapping them.
-- Explore error handling in Swi
- */
 
 
-//Optionals
 
+
+
+
+
+
+
+// Optionals
 
 /**
  1. Definition
@@ -178,8 +181,12 @@ func yearOneAlbumReleased(year: Int) -> String? {
         
     }
 }
+
+
 //let album = yearOneAlbumReleased(year: 2006)?.uppercased() //? is the optional chaining. Everything after the ? when run if the optional has a value.
 //print("The album is  \(album!)")
+
+
 
 
 // The nil Coalescing operator: Example
@@ -198,18 +205,6 @@ print("Number is \(result1)")
 
 
 // Example 2: Mapping numbers to their squares
-
-// Example 3: Determining the season based on the month
-
-// Example 4: Checking if a character is a vowel
-// Example 5: Converting a string to an integer
-
-
-
-
-
-
-// Example 2: Mapping numbers to their squares
 func squareNumber(_ number: Int) -> Int? {
     return number > 0 ? number * number : nil
 }
@@ -222,11 +217,6 @@ func square(_ number: Int) -> Int? {
 
 let squaredValue = square(4) ?? -1
 print("Squared value: \(squaredValue)")
-
-
-
-
-//--------------------------------------------------------
 
 
 
@@ -251,15 +241,6 @@ func seasonForMonth(_ month: Int) -> String? {
     }
 }
 
-let currentSeason = seasonForMonth(8) ?? "Unknown"
-print("Current season: \(currentSeason)")
-
-
-
-
-//------------------------------------------------------
-
-
 
 
 // Example 4: Checking if a character is a vowel
@@ -279,13 +260,6 @@ print("Is character a vowel? \(charIsVowel)")
 
 
 
-
-//--------------------------------------------------------------------
-
-
-
-
-
 // Example 5: Converting a string to an integer
 func convertToInt(_ str: String) -> Int? {
     return Int(str)
@@ -300,8 +274,6 @@ func stringToInt(_ str: String) -> Int? {
 let numberFromString = stringToInt("42") ?? -1
 print("Number from string: \(numberFromString)")
 
-
-//------------------------------------------------------------------
 
 
 /*
@@ -370,14 +342,11 @@ if let unwrappedCount = name1?.count {
 
 
 
-
-
-
-
-
 /*
  Optional binding: You use ["if let" or "guard let"] to check if an optional has a value and assign it to a new constant. This is a safe way to unwrap an optional. For example:
  */
+
+
 
 var name: String? = "Alice"
 if let unwrappedName = name {
@@ -414,8 +383,6 @@ if let unwrappedName = surname {
 }else{
     print("surname is nil")
 }
-
-
 
 
 //Example with using "guard let"
@@ -524,202 +491,77 @@ print(myMax ?? 0)
 
 
 
-
-func concatenateString(first: String, second: String) -> String {
-    return  first + second + "Welcome to the programm"
+// Define a function named "calculate" that takes three parameters: a, b, and operation
+func calculate(a: Int, b: Int, operation: (Int, Int) -> Int) -> Int {
+    // Perform the operation with the given parameters and return the result
+    return operation(a, b)
 }
-let greetingMessage = concatenateString(first: "Charles ", second: "Nebo ")
-print(greetingMessage)
 
-
-//Calculate and Processing
-func calculateTotalPrice(itemPrices: [Double]) -> Double {
-    let quotient = itemPrices.reduce(1, /)
-    
-    return quotient
+// Define a closure that adds two numbers
+let addition = { (a: Int, b: Int) -> Int in
+    return a + b
 }
-let prices = [12.0, 8.75, 5.99, 34.0, 24.0]
-let quotientPrices = calculateTotalPrice(itemPrices: prices)
-print("the product price is \(quotientPrices)")
 
-
-
-// Finding sorted numbers in Array
-func sortedNumbers(numbers: [Int]) -> [Int] {
-    let sortedNumbers = numbers.sorted()
-    
-    return sortedNumbers
+// Define a closure that subtracts two numbers
+let subtraction = { (a: Int, b: Int) -> Int in
+    return a - b
 }
- let unSorted = [5,2,8,1,7]
- let sorted =  sortedNumbers(numbers: unSorted)
-print(sorted)
+
+// Define a closure that multiplies two numbers
+let multiplication = { (a: Int, b: Int) -> Int in
+    return a * b
+}
+
+// Call the calculate function with different operations
+let additionResult = calculate(a: 10, b: 5, operation: addition)
+print("Addition result: \(additionResult)")
+
+let subtractionResult = calculate(a: 10, b: 5, operation: subtraction)
+print("Subtraction result: \(subtractionResult)")
+
+let multiplicationResult = calculate(a: 10, b: 5, operation: multiplication)
+print("Multiplication result: \(multiplicationResult)")
 
 
 
+// Using Guard Statements for Unwrapping
 
-
-//Find the middle number in a sorted Array
-func findMiddleNumber(sortedArray: [Int]) -> Int? {
-
-    guard  !sortedArray.isEmpty else {
-        return nil    // returns nil for empty array
+func processUserDetails(user: [String: Any]) {
+    guard let name = user["name"] as? String else {
+        print("User name is missing or invalid")
+        return
     }
-    let middleIndex = sortedArray.count / 2
-    return sortedArray[middleIndex]
-}
-let sortedNumbers = [1,4,7,10,15,20,30,50,80,90]
-if let middleNumber = findMiddleNumber(sortedArray: sortedNumbers){
-    print("The middle number is: \(middleNumber)")
-}else{
-    print("the array is nil")}
 
-
-// This code assumes that the array is not sorted, and should be sorted before finding the middle number
-
-func findMiddleNumbers(numbers: [Int]) -> Int? {
-    let sortedNumbers = numbers.sorted()
-
-    guard  !sortedNumbers.isEmpty else {
-        return nil    // returns nil for empty array
+    if let age = user["age"] as? Int {
+        print("\(name) is \(age) years old")
+    } else {
+        print("\(name)'s age is unknown")
     }
-    let middleIndex = sortedNumbers.count / 2
-    return sortedNumbers[middleIndex]
 }
 
-let unsortedNumber = [1,4,7,10, 25,20,30,80,90]
-if let middleNumber = findMiddleNumbers(numbers: unsortedNumber) {
-    print("The middle number is : \(middleNumber)")
-}else{
-    print("the array is empty")
+let user1: [String: Any] = ["name": "Bob", "age": 30]
+let user2: [String: Any] = ["age": 25]
+
+processUserDetails(user: user1)
+processUserDetails(user: user2)
+
+
+// Checking Optional Type Using 'is ' Keyword
+var optionalValue: Any? = "Hello"
+
+if optionalValue is String {
+    print("The value is a String")
+} else {
+    print("The value is not a String")
 }
 
-//Other Array sort functions: Built in sort functions
-var numbers = [4,2,8,1,7,1]
-let sortedMyNumbers = numbers.sorted()
-print(sortedMyNumbers)
+optionalValue = 42
 
-//Sets
-var uniqueNumbers: Set<Int> = [5,2,8,1,7,1]
-let sortedSet = uniqueNumbers.sorted()
-print(sortedSet)
-
-// Dictionaries
-let myDictionary = ["Banana": 3, "Apple": 5, "Orange": 2]
-let sortedKeys = myDictionary.keys.sorted()
-print(sortedKeys)
-
-//
-
-//Error Handling in Swift
-
-import Foundation
-
-/**
- 
- Error Handling in Swift
- - Error handling is the process of responding to and recovering from error conditions in your
-   program.
- - When something unexpected happens, Swift allows you to throw and catch errors, propagate
-   them, and manipulate recoverable errors at runtime1. Here’s how it works:
-
-
- 1. Representing Errors:
- - Errors in Swift are represented by values of types that conform to the Error protocol.
- - This protocol indicates that a type can be used for error handling.
- - Enumerations (enums) are particularly well-suited for modeling related error conditions.
- - You can associate additional information with each error case using associated values.
- Example 2:
- 
- */
-enum VendingMachineError: Error {
-    case invalidSelection
-    case insufficientFunds(coinsNeeded: Int)
-    case outOfStock
+if optionalValue is Int {
+    print("The value is an Int")
+} else {
+    print("The value is not an Int")
 }
-
-/**
- When everything goes smoothly (no errors), you can handle the success case. In this example, we assume that buySnack() returns a valid item.
- 
-I apologize for the oversight. It seems I used a placeholder function called `buySnack()` without defining it. Let's rectify that by creating a simple example where we define the `buySnack()` function and demonstrate error handling.
- */
-
-// Example function that simulates buying a snack
-func buySnack(itemName: String, coinsInserted: Int) throws -> String {
-    let availableItems = ["Chips", "Candy", "Soda"]
-    
-    guard availableItems.contains(itemName) else {
-        throw VendingMachineError.invalidSelection
-    }
-    
-    let itemPrice: [String: Int] = ["Chips": 3, "Candy": 2, "Soda": 1]
-    
-    guard let price = itemPrice[itemName] else {
-        throw VendingMachineError.outOfStock
-    }
-    
-    if coinsInserted < price {
-        throw VendingMachineError.insufficientFunds(coinsNeeded: price - coinsInserted)
-    }
-    
-    // Process the purchase
-    return "Enjoy your \(itemName)!"
-}
-
-// Example usage
-do {
-    let purchasedItem = try buySnack(itemName: "Chips", coinsInserted: 4)
-    print(purchasedItem)
-} catch VendingMachineError.invalidSelection {
-    print("Invalid item selected.")
-} catch VendingMachineError.insufficientFunds(let coinsNeeded) {
-    print("Please insert \(coinsNeeded) more coins.")
-} catch VendingMachineError.outOfStock {
-    print("Sorry, that item is out of stock.")
-} catch {
-    print("An unexpected error occurred: \(error)")
-}
-
-
-/**
-
-In this revised example:
-- We define the `buySnack()` function that takes an item name and the number of coins inserted.
-- The function throws specific errors based on the scenario (invalid selection, insufficient funds, or out of stock).
-- The `do-catch` block handles each error case appropriately.
-
-Feel free to adapt this code snippet to your specific use case!
-
- */
-
-
-
-var inArray = [1,4,5,3,3,5]
-var newArray = inArray.sorted()
-print(newArray)
-
-//Sortedby function
-let names = ["Chris", "Alex", "Ewa", "Barry", "Daniel"]
-func backward(_ s1: String, _ s2: String) -> Bool {
-    return s1 > s2
-}
-
-var reverseNames = names.sorted(by: backward)
-print(reverseNames)
-
-//Closure expression-
-/**
- { (<#parameters># ->    <#return type# > in
-    < #statements#>
- }
-
- Example
- */
-reverseNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
- return s1 > s2
-
-})
-
-
 
 
 

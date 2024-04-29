@@ -5,6 +5,9 @@ import UIKit
 
 
 
+
+
+
 /*
  
  What is a Swift Protocol?
@@ -14,125 +17,40 @@ import UIKit
 
  Blueprints: Protocols define what methods or properties a type should have, without specifying their actual implementation.
  
- Adoption: Classes, structs, and enums can adopt (conform to) protocols.
- Requirements: A type that conforms to a protocol must provide implementations for all its requirements.
  
- Multiple Conformance: A type can conform to multiple protocols.
- Why Should Novice Programmers Care About Protocols?
- Protocols are essential for several reasons:
-
- Modularity: Protocols allow you to break down functionality into smaller pieces. You can define common behavior in protocols and then have different types adopt them.
- 
- Code Reusability: By conforming to protocols, you can reuse code across different types. This promotes cleaner, more maintainable code.
- 
- Flexibility: Protocols enable you to write more flexible and extensible code. You can create generic functions that work with any type conforming to a specific protocol.
- 
- Protocol-Oriented Programming (POP): Swift encourages POP, where protocols play a central role. It’s a powerful paradigm that promotes better design.
- 
- 
-
- Here's what you need to know about these properties:
-
- 1. Property Name and Type: The protocol specifies the name 
-    and type of the required properties, but it doesn't specify
-    whether they should be stored properties (holding a value)
-    or computed
-    properties (calculated on the fly). It only sets the expectations for what the property 
-    should be able to do.
-
- 2. Gettable and Settable:
- Certainly! Let's break down the key points about gettable and settable properties in a protocol:
-
- 1. Gettable Properties:
-    - A gettable property in a protocol requires conforming types to provide a way to retrieve the
-      value of the property.
-    - It is indicated by the `{ get }` keyword after the property declaration in the protocol.
-    - Gettable properties are read-only, meaning that they can be accessed but cannot be modified.
-
- 2. Settable Properties:
-    - A settable property in a protocol requires conforming types to provide a way to both get and set the
-      value of the property.
-    - It is indicated by the `{ get set }` keyword after the property declaration in the protocol.
-    - Settable properties are both readable and writable, allowing them to be modified after initialization.
-
- 3. Use of let and var:
-    - In Swift, the `let` keyword is used to define constant properties, whereas the `var` keyword is 
-      used to define mutable properties.
-    - When defining properties in a protocol, the choice between `let` and `var` depends on whether 
-       the property should be mutable or immutable in conforming types.
-    - If a property in a protocol needs to be mutable (both gettable and settable), it should be declared using the 
-      `var` keyword.
-    - If a property in a protocol only needs to be immutable (gettable only), it can be declared using the
-     `let` keyword.
-
- 4. Differences in Usage:
-    - The main difference between using `let` and `var` in a protocol lies in the mutability of the property.
-    - Properties declared with `let` are immutable and can only be set once during initialization. They cannot 
-      be modified afterward.
-    - Properties declared with `var` are mutable and can be modified after initialization.
-    - When conforming to a protocol, if a property is declared as `let`, it must be set within the initializer of
-      the conforming type and cannot be modified afterward. If declared as `var`, it can be set in the
-      initializer and modified later.
-
- Opinion:
- - It's important for novice programmers to understand the distinction between gettable and settable
-   properties in protocols, as it influences how properties are accessed and modified by conforming types.
- - The choice between using `let` and `var` depends on whether the property needs to be mutable or
-   immutable, which impacts the behavior and flexibility of the conforming types.
- - Understanding these concepts helps in designing robust and flexible code architectures, enabling better
-   encapsulation and control over data access and modification.
-
-
- 3. Declaration in Protocol: Property requirements in a protocol are always declared as 
-    variable properties using the `var` keyword.
-
-     - For gettable properties only, use `{ get }` after the type declaration.
-     
-     - For properties that are both gettable and settable, use `{ get set }` after the 
-       type declaration.
- 
- Concrete Types
- - In Swift, a type is considered concrete if it can be instantiated directly, meaning you can create 
-    instances of that type.
- 
-    Concrete types have methods and properties associated with them, and can be customized as needed.
-    In contrast, a protocol itself is not a concrete type because it cannot be directly instantiated. However, types that
-     conform to a protocol can be concrete types and are capable of instantiation.
-
  */
 
 
-// Now, let's implement Protocol using Types that conform to Protocols: Struct, Enum, and Classes
 
+//Deep Dive into protocols and Protocol Oriented Programming
 
+import Foundation
+import UIKit
 
-// Example 1 -  A struct that conforms to a protocol
+// What is a Swift Protocol?
+// In Swift, a protocol defines a blueprint of methods or properties that can be adopted by classes, structures, or enumerations. Think of it as a contract that specifies certain requirements. When a type (like a class) conforms to a protocol, it promises to provide actual implementations for those requirements.
+
+// Example 1 - A struct that conforms to a protocol
 
 protocol PersonProtocol {
     var name: String { get }
     var age: Int  { get }
 }
 
-
 struct Person: PersonProtocol, CustomStringConvertible {
-   var name: String
-   var age: Int
+    var name: String
+    var age: Int
     
-    
-// CustomStringConvertible implementation
+    // CustomStringConvertible implementation
     var description: String {
-        return "Name:  \(name),  Age: \(age)"
+        return "Name: \(name), Age: \(age)"
     }
 }
+
 let person = Person(name: "Donald", age: 73)
-print(person)
+print(person)  // Output: Name: Donald, Age: 73
 
-
-
-
-// Example 2 -  A struct that conforms to a protocol
-
-//1. Car Protocol with Instance Properties:
+// Car Protocol with Instance Properties:
 
 protocol CarProtocol {
     var wheels: Int { get }
@@ -148,56 +66,33 @@ struct Sedan: CarProtocol {
 
 // Example Usage
 let mySedan = Sedan(wheels: 4, hasfourDoors: true, color: "Blue")
-print("My sedan has: \(mySedan.wheels) wheels, \(mySedan.hasfourDoors ? "four" : "two"), doors, and is \(mySedan.color)")
+print("My sedan has: \(mySedan.wheels) wheels, \(mySedan.hasfourDoors ? "four" : "two") doors, and is \(mySedan.color)")  // Output: My sedan has: 4 wheels, four doors, and is Blue
 
+// Enum that conforms to a protocol
 
-
-/*
- 
- 2. Car Protocol with Static Property:
- 
- 
- protocol Car {
-     static var manufacturer: String { get }
- }
-
- // Example: A class conforming to Car
- class ElectricCar: Car {
-     static var manufacturer = "Tesla"
- }
-
- print("Electric cars by \(ElectricCar.manufacturer) are eco-friendly.")
-
- */
-
-
-
-//  Example 2 -  A Enum that conforms to a protocol
-
-protocol CompassDirectionProtocol{
+protocol CompassDirectionProtocol {
     static var allDirections: [Self] { get }
 }
+
 enum CompassDirection: CaseIterable {
     case north
     case south
     case east
     case west
     
-//CompassDirection conforms to Protocol by implementing allCases property required by CaseIterable
+    // CompassDirection conforms to Protocol by creating allCases property CaseIterable
     
     static var allCases: [CompassDirection] {
         return [.north, .south, .east, .west]
     }
 }
+
 print("All compass directions:")
 for direction in CompassDirection.allCases {
     print(direction)
 }
 
- 
- 
-
-//Example 3 -  A Type Alias that conforms to a protocol
+// Type Alias that conforms to a protocol
 
 typealias Numbers = (Int, Int)
 
@@ -212,17 +107,15 @@ let numbers3: Numbers = (3, 6)
 print(numbers1 < numbers2) // Output: false
 print(numbers1 < numbers3) // Output: true
 
-
-
-
-
 // Defining the Shape protocol
+
 protocol Shape {
     var area: Double { get }
     var perimeter: Double { get }
 }
 
 // Implementing the Circle struct conforming to the Shape protocol
+
 struct Circle: Shape {
     let radius: Double
     
@@ -241,13 +134,14 @@ struct Square: Shape {
     var area: Double {
         return side * side
     }
+    
     var perimeter: Double {
         return 4 * side
     }
 }
 
-// Implementing the Rectangle struct conforming to the Shape
-//protocol
+// Implementing the Rectangle struct conforming to the Shape protocol
+
 struct Rectangle: Shape {
     let width: Double
     let height: Double
@@ -277,13 +171,10 @@ print("Width: \(rectangle.width), Height: \(rectangle.height)")
 print("Area: \(rectangle.area)")
 print("Perimeter: \(rectangle.perimeter)")
 
-
-
-// Defining Protocols represnting basic bhaviours
+// Defining Protocols representing basic behaviors
 protocol Animal {
     var name: String { get }
     func makeSound()
-    
 }
 
 struct Dog: Animal {
@@ -305,43 +196,38 @@ struct Cat: Animal {
 let dog = Dog(name: "Nappi")
 let cat = Cat(name: "Merkku")
 
-print(dog.name)
-print(cat.name)
- 
+print(dog.name)  // Output: Nappi
+print(cat.name)  // Output: Merkku
 
-
-//Protocol Inheritance:
+// Protocol Inheritance:
 
 // Define the base protocol
 protocol Vehicle {
     var numberOfWheels: Int { get }
-    
 }
 
 // Define a protocol inheritance from Vehicle
-
 protocol Car: Vehicle {
     var brand: String { get }
 }
 
 // Define another protocol inheriting from Vehicle
-
 protocol Bike {
-    var hasBasket: Bool { get}
-        
-    }
+    var hasBasket: Bool { get }
+}
 
 protocol Motorcycle: Bike {
     var hasSideCar: Bool { get }
 }
 
-// Implement a struck conforming to Motorcycle
+// Implement a struct conforming to Motorcycle
 struct HondaCBR: Motorcycle {
     var numberOfWheels: Int = 2
     var hasBasket: Bool = false
     var hasSideCar: Bool = false
     var brand: String = "Honda"
 }
+
 // Call and print the properties
 let hondaCBR = HondaCBR()
 print("Brand: \(hondaCBR.brand)")
@@ -349,15 +235,12 @@ print("Number of Wheels: \(hondaCBR.numberOfWheels)")
 print("Has Basket: \(hondaCBR.hasBasket)")
 print("Has Sidecar: \(hondaCBR.hasSideCar)")
 
-
-
 // Define a protocol
 protocol Printable {
     func printInfo()
 }
 
-// Extend the protocol to provide a default implementation for 
-//the printInfo method
+// Extend the protocol to provide a default implementation for the printInfo method
 extension Printable {
     func printInfo() {
         print("Default implementation of printInfo")
@@ -370,8 +253,6 @@ struct Book: Printable {
         print("Printing book information...")
     }
 }
-
-
 
 // Protocol Oriented-Programming
 
@@ -394,20 +275,17 @@ class Employee: Greet {
 let employee1 = Employee()
 employee1.message() // Output: "Good Morning, Perry!"
 
-
-
-
 // Define the struct conforming to Hashable protocol
 struct City: Hashable {
     let name: String  // Changed from var to let
     let population: Int  // Changed from var to let
 }
 
-// Create a set of cities
-let citySet: Set<City> = [City(name: "Paris", population: 2_141_000)]
 
-// Check if a city with the same name and population exists in the set
-print(citySet.contains(City(name: "Paris", population: 2_141_000))) 
+
+
+//---------------------------------------------------------------------------
+
 
 
 
@@ -426,10 +304,6 @@ struct Tag: ExpressibleByStringLiteral, Taggable {
         name = value
     }
 }
-
-
-
-
 
 // Protocol defining addition with an associated property
 protocol Sum {
@@ -471,14 +345,11 @@ class Calculators: Sum, Multiplication {
 }
 
 // Usage
-let calc = Calculators(operand1: 5, operand2: 3, factor1:4, factor2: 6)
-calc.addition()
-calc.multiply()
+let calc = Calculators(operand1: 5, operand2: 3, factor1: 4, factor2: 6)
+calc.addition()   // Output: Result of addition: 8
+calc.multiply()   // Output: Result of multiplication: 24
 
-
-
-
-//protocol
+// Protocol defining a Drawable and Colorful
 protocol Drawable {
     func draw()
 }
@@ -487,10 +358,11 @@ protocol Colorful {
     var color: String { get set }
 }
 
+// Struct conforming to both Drawable and Colorful protocols
 struct ColoredRectangle: Drawable, Colorful {
     var color: String
     
-    // Implement the draw() method
+    // Implementing the draw() method
     func draw() {
         print("A rectangle with color: \(color)")
     }
@@ -498,4 +370,4 @@ struct ColoredRectangle: Drawable, Colorful {
 
 // Example usage
 let coloredRect = ColoredRectangle(color: "Blue")
-coloredRect.draw() // Call the draw() method
+coloredRect.draw()  // Output: A rectangle with color: Blue
