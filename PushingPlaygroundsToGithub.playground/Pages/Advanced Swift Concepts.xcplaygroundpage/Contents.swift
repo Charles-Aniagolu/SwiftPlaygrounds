@@ -7,12 +7,14 @@ import Foundation
 
 
 /*
- - Definition**: Closures in Swift are self-contained blocks of functionality used similarly to anonymous functions, lambdas, or blocks in other languages.
+ - Definition**: Closures in Swift are self-contained blocks of functionality used similarly to anonymous 
+   functions, lambdas, or blocks in other languages.
  - Capture Behavior**: They can capture and retain references to constants and variables from their surrounding context.
  - Memory Management**: Swift automatically handles memory management for captured values.
  - Anonymous Nature**: Unlike functions, closures in Swift do not have a defined name in their syntax.
  
- - Usage**: Closures are often assigned to variables or passed directly as arguments to functions without being named, but they can also be assigned to variables for later reference.
+ - Usage**: Closures are often assigned to variables or passed directly as arguments to functions without being named,
+   but they can also be assigned to variables for later reference.
 */
 
 
