@@ -4,10 +4,13 @@ import Foundation
 
 /**
  The distinction of  Reading values and assigning values to variables or items in a code
- In Swift, there is a distinction between reading values (retrieving or accessing data) and assigning values (setting or updating data) to variables or items, and the approach depends on the context, data structure, and the type of variable.
+ In Swift, there is a distinction between reading values (retrieving or accessing data) 
+ and assigning values (setting or updating data) to variables or items, and the approach 
+ depends on the context, data structure, and the type of variable.
  */
 
-//Reading by Numerical Positions: Explanation: Here, we have an array of numbers, and we read the value at the third position (index 2) using the numerical position.
+//Reading by Numerical Positions: Explanation: Here, we have an array of numbers, and we read 
+//the value at the third position (index 2) using the numerical position.
 
 import Foundation
 
