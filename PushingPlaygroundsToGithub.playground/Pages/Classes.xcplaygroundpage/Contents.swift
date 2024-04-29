@@ -8,7 +8,9 @@ import Foundation
 /**
  Swift Classes
 
-A class in Swift is a blueprint or template for creating objects. It defines properties (attributes) and methods (functions) that characterize the objects created from it. Classes allow you to model real-world entities, encapsulate data, and provide behavior.
+A class in Swift is a blueprint or template for creating objects. It defines properties (attributes) 
+and methods (functions) that characterize the objects created from it. Classes allow you to model real-world entities, 
+encapsulate data, and provide behavior.
 */
 
 
