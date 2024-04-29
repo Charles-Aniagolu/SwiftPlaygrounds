@@ -5,13 +5,17 @@ import Foundation
 /*
  
  Protocol Extensions:
- Definition: Protocols describe what methods or properties something should have, but they don’t provide the actual code inside them.
- Purpose: Protocol extensions allow you to add default implementations and computed properties to protocols. When a type conforms to a protocol, it automatically gains the functionalities provided by the protocol extension.
+ Definition: Protocols describe what methods or properties something should have,
+ but they don’t provide the actual code inside them.
+ Purpose: Protocol extensions allow you to add default implementations and computed properties 
+ to protocols. When a type conforms to a protocol, it automatically gains the functionalities provided by the protocol extension.
  
  
  Swift Extensions:
- Definition: Extensions allow you to add methods to existing types like classes, structs, and enums. They enhance the functionality of specific data types.
- Purpose: Extensions are useful for adding new methods, computed properties, initializers, and more to existing types without modifying their original source code.
+ Definition: Extensions allow you to add methods to existing types like classes, structs, and enums. 
+ They enhance the functionality of specific data types.
+ Purpose: Extensions are useful for adding new methods, computed properties, initializers, and more to 
+ existing types without modifying their original source code.
  
  */
 
@@ -475,11 +479,14 @@ protocol Animal{
  Is this a stored property? if not what is it: protocol Animal{
      var name: String {get set}
  
- No, the property "name" in the "Animal" protocol is not a stored property. Instead, it's a computed property with a getter and a setter.
+ No, the property "name" in the "Animal" protocol is not a stored property. 
+ Instead, it's a computed property with a getter and a setter.
 
- A stored property is a property that stores constant or variable values as part of an instance. It is declared with the `var` or `let` keyword inside the definition of a class, struct, or enum.
+ A stored property is a property that stores constant or variable values as part of an instance.
+ It is declared with the `var` or `let` keyword inside the definition of a class, struct, or enum.
 
- In contrast, a computed property does not store a value directly. Instead, it provides a getter and an optional setter to retrieve and set other properties and values indirectly.
+ In contrast, a computed property does not store a value directly. Instead, it provides a getter
+ and an optional setter to retrieve and set other properties and values indirectly.
 
  In `Animal` protocol below:
 
@@ -488,7 +495,9 @@ protocol Animal{
  }
  
 
- The `name` property is a computed property with a getter (`get`) and a setter (`set`). This means that conforming types to the `Animal` protocol must provide their own implementation for both getting and setting the `name` property. The actual storage for the property will be provided by the conforming types.
+ The `name` property is a computed property with a getter (`get`) and a setter (`set`). 
+ This means that conforming types to the `Animal` protocol must provide their own implementation 
+ for both getting and setting the `name` property. The actual storage for the property will be provided by the conforming types.
  
 
 
@@ -514,7 +523,8 @@ print(person.greeting) // Output: Hello, my name is John.
 //Overriding Existing Functionalities Examples
 
 /*
- Extensions can't directly override existing functionalities of types, but you can achieve similar behavior by creating methods with the same name as existing ones. Here's an example
+ Extensions can't directly override existing functionalities of types, but you can achieve similar 
+ behavior by creating methods with the same name as existing ones. Here's an example
 
 
 // Struct representing a shape
