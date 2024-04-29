@@ -164,7 +164,8 @@ if year == nil {
     
 }else{
     
-    print("It was released in \(year!)") //Note the exclamation mark: it means "I'm certain this contains a value, so force unwrap it now."
+    print("It was released in \(year!)") //Note the exclamation mark: it means "I'm certain this
+   // contains a value, so force unwrap it now."
 }
 */
 //Optional Chaining - Makes run a code if your optional has a value.
@@ -183,7 +184,8 @@ func yearOneAlbumReleased(year: Int) -> String? {
 }
 
 
-//let album = yearOneAlbumReleased(year: 2006)?.uppercased() //? is the optional chaining. Everything after the ? when run if the optional has a value.
+//let album = yearOneAlbumReleased(year: 2006)?.uppercased() //? is the optional chaining.
+//Everything after the ? when run if the optional has a value.
 //print("The album is  \(album!)")
 
 
@@ -343,7 +345,8 @@ if let unwrappedCount = name1?.count {
 
 
 /*
- Optional binding: You use ["if let" or "guard let"] to check if an optional has a value and assign it to a new constant. This is a safe way to unwrap an optional. For example:
+ Optional binding: You use ["if let" or "guard let"] to check if an optional has a value and assign it to a new constant. 
+ This is a safe way to unwrap an optional. For example:
  */
 
 
@@ -365,7 +368,8 @@ if let unwrappedName = name {
 
 /*
 Optional Binding ( "if le" OR "guard let": How to use guard let in optional binding : Example.
-Optional binding allows you to check if the optional contains a value and, if so, safely unwrap and use that value within a specific scope
+Optional binding allows you to check if the optional contains a value and, if so, safely unwrap
+and use that value within a specific scope
  */
 
 
