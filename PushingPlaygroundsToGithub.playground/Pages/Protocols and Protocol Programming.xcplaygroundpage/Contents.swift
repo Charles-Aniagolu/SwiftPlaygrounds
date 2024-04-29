@@ -11,7 +11,9 @@ import UIKit
 /*
  
  What is a Swift Protocol?
- In Swift, a protocol defines a blueprint of methods or properties that can be adopted by classes, structures, or enumerations. Think of it as a contract that specifies certain requirements. When a type (like a class) conforms to a protocol, it promises to provide actual implementations for those requirements.
+ In Swift, a protocol defines a blueprint of methods or properties that can be adopted by classes, 
+ structures, or enumerations. Think of it as a contract that specifies certain requirements. 
+ When a type (like a class) conforms to a protocol, it promises to provide actual implementations for those requirements.
 
  Here are the key points about protocols:
 
@@ -28,8 +30,10 @@ import Foundation
 import UIKit
 
 // What is a Swift Protocol?
-// In Swift, a protocol defines a blueprint of methods or properties that can be adopted by classes, structures, or enumerations. Think of it as a contract that specifies certain requirements. When a type (like a class) conforms to a protocol, it promises to provide actual implementations for those requirements.
-
+/* In Swift, a protocol defines a blueprint of methods or properties that can be adopted by classes, 
+structures, or enumerations. Think of it as a contract that specifies certain requirements.
+When a type (like a class) conforms to a protocol, it promises to provide actual implementations for those requirements.
+*/
 // Example 1 - A struct that conforms to a protocol
 
 protocol PersonProtocol {
@@ -66,7 +70,7 @@ struct Sedan: CarProtocol {
 
 // Example Usage
 let mySedan = Sedan(wheels: 4, hasfourDoors: true, color: "Blue")
-print("My sedan has: \(mySedan.wheels) wheels, \(mySedan.hasfourDoors ? "four" : "two") doors, and is \(mySedan.color)")  // Output: My sedan has: 4 wheels, four doors, and is Blue
+print("My sedan has: \(mySedan.wheels) wheels, \(mySedan.hasfourDoors ? "four" : "two") doors, and is \(mySedan.color)")  
 
 // Enum that conforms to a protocol
 
