@@ -10,7 +10,10 @@ import Foundation
 
 // Function declaration and invocation:
 /**
- A function in Swift is a self-contained block of code that performs a specific task. It allows you to organize your code, make it modular, and promote code reuse. The declaration of a function includes its name, parameters, return type, and body. Invocation refers to calling a function to execute its code.
+ A function in Swift is a self-contained block of code that performs a specific task. 
+ It allows you to organize your code, make it modular, and promote code reuse. 
+ The declaration of a function includes its name, parameters, return type, and body.
+ Invocation refers to calling a function to execute its code.
 
  Syntax:
  func functionName(parameter1: Type, parameter2: Type, ...) -> ReturnType {
@@ -31,7 +34,10 @@ import Foundation
 
 // Parameters and return values:
 /**
- Parameters are the values that a function accepts when it's called, and they are defined in the function's parameter list. Return values are the results that a function produces after it's executed. In Swift, both parameters and return values can have external and internal names, which can improve the readability of function calls and the clarity of function implementations.
+ Parameters are the values that a function accepts when it's called, and they are defined 
+ in the function's parameter list. Return values are the results that a function produces after it's executed. 
+ In Swift, both parameters and return values can have external and internal names, which can improve the
+ readability of function calls and the clarity of function implementations.
 
  Syntax:
  func functionName(externalName internalName: Type, ...) -> ReturnType {
@@ -52,7 +58,10 @@ import Foundation
 
 // Function types:
 /**
- In Swift, functions are first-class citizens, which means they can be assigned to variables, passed as arguments to other functions, and returned from other functions. Function types represent the types of functions in Swift, including parameter types, return type, and whether the function throws an error.
+ In Swift, functions are first-class citizens, which means they can be assigned to variables, 
+ passed as arguments to other functions, and returned from other functions. Function types 
+ represent the types of functions in Swift, including parameter types, return type, and whether
+ the function throws an error.
 
  Syntax:
  let functionName: (ParameterTypes) -> ReturnType = { parameters in
@@ -80,7 +89,9 @@ import Foundation
 
 /*
 
-This structure provides additional information about function declaration and invocation, parameters and return values, and function types to support the code provided earlier. Let me know if you need further clarification!
+This structure provides additional information about function declaration and invocation, 
+parameters and return values, and function types to support the code provided earlier. 
+Let me know if you need further clarification!
 */
 
 
@@ -208,7 +219,9 @@ print(myfact)
    by a space.
  - It helps make the function implementation clear and concise.
  
- Internal parameters are used inside the function and are not visible to the caller. They are used to refer to the values passed to the function. Here name and message are internal parameters used inside the function to refer to values passed to the function.
+ Internal parameters are used inside the function and are not visible to the caller. 
+They are used to refer to the values passed to the function. Here name and message are 
+internal parameters used inside the function to refer to values passed to the function.
  */
 
 //Internal Parameters: Example 1:
@@ -420,10 +433,14 @@ do {
 //Function inout
 /**
  Definition of inout:
- inout is a keyword in Swift used to indicate that a parameter is passed by reference to a function. This means the function can modify the value of the parameter directly, and any changes made to the parameter inside the function will be reflected outside the function.
+ inout is a keyword in Swift used to indicate that a parameter is passed by reference to a function. 
+ This means the function can modify the value of the parameter directly, and any changes made to the
+ parameter inside the function will be reflected outside the function.
 
  Use and Main Objective:
- The main objective of using inout parameters is to allow a function to modify the values of its parameters and have those changes reflected outside the function. It's particularly useful when you want a function to alter the value of a variable that was passed to it.
+ The main objective of using inout parameters is to allow a function to modify the values of its
+ parameters and have those changes reflected outside the function. It's particularly useful when 
+ you want a function to alter the value of a variable that was passed to it.
 
  Types of inout:
  inout is typically used with variables of non-constant types, including custom data types such as structures and classes.
